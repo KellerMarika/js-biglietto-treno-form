@@ -34,14 +34,14 @@
             <h1 class="title text-uppercase">title</h1>
 
             <!-- form -->
-            <form action="#" method="get">
+            <form>
                 <fieldset>
                     <!-- legenda -->
                     <legend>legend</legend>
 
                     <div class="row justify-content-center">
                         <div class="col">
-                            <!-- id const userID -->
+                            <!-- id const userId -->
                             <label class="d-block" for="user-id">Name Surname</label>
                             <input id="user-id" type="text" name="user-id">
                         </div>
@@ -54,29 +54,32 @@
 
                         <div class="col">
                             <!-- id const userBirthYear -->
-                            <label class="d-block" for="user-bird-year">Age Range</label>
-                            <select name="user-bird-year" id="user-bird-year">
-                                <option value="<18">underage</option>
-                                <option value="18<user<65">adult</option>
-                                <option value="65>=">over 65</option>
+                            <label class="d-block" for="user-age">Age Range</label>
+                            <select name="user-age" id="user-age">
+                                <option value="underage">underage</option>
+                                <option value="adult">adult</option>
+                                <option value="over 65">over 65</option>
                             </select>
                         </div>
                         <!-- bottoni -->
                         <div class="col12">
-                            <!-- id button btngenerateTiket
+                            <!-- id button btnGenerateTiket
                             eventlistner click replace class to tiket
-                      eventlistner click valori tabella  =const -->  
-                            <button id="generate-tiket">Genera</button>
-                               <!-- id button btnCancel
+                      eventlistner click valori tabella  =const -->
+                            <input type="button" value="Generate" id="btn-tiket-printer">
+
+
+                            <!-- id button btnCancel
                             eventlistner click replace class to tiket
                         eventlistner click valore user.ecc,ecc ="" -->
-                            <button id="cancel">Cancel</button>
+                        <input type="button" value="Cancel" id="cancel">
+                     
                         </div>
                 </fieldset>
             </form>
 
-               <!-- appare e scompare premendo  -->
-               <div id="Tiket" class="container text-start">
+            <!-- appare e scompare premendo  -->
+            <div id="Tiket" class="container text-start">
                 <h1 class="title text-center text-uppercase">title</h1>
 
                 <h2 class="">Passenger's details</h2>
@@ -84,18 +87,16 @@
                     <div class="col">
                         <h2 class="">Passenger's Name</h2>
                         <!-- id  innertext -->
-                        <div id="tiket-user-id">
-                            mela banana
-                        </div>
+                        <div id="tiket-user-id"></div>
                     </div>
 
                     <div class="col">
                         <table class="text-center">
                             <thead>
                                 <tr>
-                                    <th>Offert</th>
+                                    <th>Offer</th>
                                     <th>carriage</th>
-                                    <th>code CP</th>
+                                    <th>CP code</th>
                                     <th>tiket price</th>
                                 </tr>
                             </thead>
@@ -103,7 +104,7 @@
                             <tbody>
                                 <tr>
                                     <!-- id  innertext -->
-                                    <td id="tiket-user-offer">Offert</td>
+                                    <td id="tiket-user-offer">Offer</td>
                                     <!-- id  innertext -->
                                     <td id="tiket-user-spot">carrozza</td>
                                     <!-- id  innertext -->

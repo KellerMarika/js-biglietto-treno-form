@@ -1,101 +1,81 @@
-/* dichiaro variabili all'inizio*/
+/* QUALI VARIABILI MI SERVONO */
 
-/*****VARIABILI TRATTA ************************************/
-
-//km inseriti da utente
-let userTravelWidth = prompt(`Please,
-enter the number of kilometers you wish to travel`);
-console.log("n km = ", userTravelWidth, typeof userTravelWidth);
-
-/**** VARIABILI ETA'************************************/
-
-//recupero data corrente:
-const currentData = new Date; //______________________________
-//____________________________potrei stamparla sul biglietto!!!!
-console.log (currentData);
-
-//estraggo solamente l'anno dalla data corrente
-const currentYear = (new Date).getFullYear();
-console.log(currentYear);
+/**** NOME UTENTE *********************************************************/
+let userId = document.getElementById("user-id");
+console.log(`userId = ${userId} value = ${userId.value}`);
 
 
-/**** VARIABILI PREZZO ************************************/
-/* calcolo prezzo base €/km */
-const price = (userTravelWidth * .21);
-console.log(price);
-
-/* dichiaro priceList ma assegno il valore dentro le if/else */
-let priceList
-
-//KM.............................................................
-
-if (isNaN(userTravelWidth)) {
-    alert("please, enter a correct value");
-    //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt
-    //se valore <1
-} else if (userTravelWidth < 1) {
-    alert("this trip is too short! please, try again");
-    //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt
-} else {
-    userTravelWidth = parseInt(userTravelWidth);
-    console.log("n km= ", userTravelWidth, typeof userTravelWidth);
-}
-
-//ANNO DI NACITA....................................................... 
-//anno di nascita 
-let userBirthYear = prompt(`Please,
-enter your year of birth in extended form`);
-console.log(`userBirthYear typeoff = ${typeof userBirthYear}`);
-
-//ottengo l'età effettiva dell'utente sottraendo dall'anno corrente il dato inserito dall'utente
-const userAge = currentYear - userBirthYear;
-console.log(userAge);
+/**** USER KM *********************************************************/
+let userTravelWidth = document.getElementById("user-travel-width");
+console.log(`userTravelWidth = ${userTravelWidth} value = ${userTravelWidth.value}`);
 
 
-if (isNaN(userBirthYear)) {
-    alert("please, enter a correct value");
-    /* 130 è l'età massima che immagino possa avere l'utente che si sta interfacciando al mio sito*/
-} else if (userBirthYear < (currentYear - 150)) {
-    alert(`incorrect value.
-    sorry,
-    you are too ancient to travel with us, find a carriage!`);
-    //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt   
-} else if (userBirthYear > currentYear) {
-    alert(`incorrect value.
-    we doubt you are comeing from the future, try again!`);
-    //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt   
-} else {
-    userBirthYear = parseInt(userBirthYear);
-    console.log(`userBirthYear con parseINt typeoff= ${typeof userBirthYear}`);
-}
+/**** USER AGE *********************************************************/
+let userAge = document.getElementById("user-age");
+console.log(`userAge = ${userAge} value = ${userAge.value}`);
 
-//PREZZO...................................................
+/**** BOTTONI *********************************************************/
+const btnTiketPrinter = document.getElementById("btn-tiket-printer");
 
-//condizioni  
-//se utente minorenne : sconto 20%
-//calc: x:price=%:100  
+const btnCancel = document.getElementById("cancel");
 
-if (userAge < 18) {
-    //price - price * 20 /100
-    priceList = (price - price * .2);
-    console.log("priceList miniorenne =", priceList);
 
-    //se utente over65 : sconto 40%  
-} else if (userAge >= 65) {
+/* INIZIO FUNZIONE */
+btnTiketPrinter.addEventListener("click", function () {
 
-    priceList = (price - price * .4);
-    console.log("priceList over65 =", priceList);
+    console.log(`userId = ${userId} value = ${userId.value}`);//controllo valore
+    //modifico il valore di userId dentro al buttonClik
+    userId = userId.value;
+    console.log(`userId = ${userId}`);
 
-    /* tutti coloro che non sono nè minorenni nè over 65 */
-} else {
 
-    priceList = price
-    console.log("priceList 65>user>18=", priceList);
-}
+    //modifico il valore di userTravelWidth dentro al buttonClik
+    console.log(`userTravelWidth = ${userTravelWidth} value = ${userTravelWidth.value}`);
+    userTravelWidth = userTravelWidth.value;
+    console.log(`userTravelWidth = ${userTravelWidth}`);
 
-//a tutti aggiungo l'euro e tolgo i decimali in eccesso
-//per fatrlo ho bisogno che la voariabile uscente abbia lo stesso nome per tutti gli if
-22
-const userPrice = `${(priceList.toFixed(2))} €`;
-console.log(userPrice);
-alert(`the final price for your trip is ${(priceList.toFixed(2))} €. Have a nice trip!`);
+    //modifico il valore di userAge dentro al buttonClik
+    console.log(`userAge = ${userAge} value = ${userAge.value}`);
+    userAge = userAge.value;
+    console.log(`userAge = ${userAge}`);
+
+    /**** HTML insert value + PRINTER *************************************/
+
+    //creo le variabili-etichetta all'interno della funzione e poi le stampo.
+    //esistono solo nell'arco di tempo in cui la funzione viene eseguita. 
+
+    // user id 
+    const tiketUserId = document.getElementById("tiket-user-id");
+    tiketUserId.innerHTML = (`${userId}`);
+
+    // carriage
+    const tiketUserSpot = document.getElementById("tiket-user-spot");
+    tiketUserSpot.innerHTML = Math.floor(Math.random() * 11);//n intero max 10
+
+    // CP code 
+    const tiketUserCp = document.getElementById("tiket-user-CP");
+    tiketUserCp.innerHTML = Math.floor(Math.random() * 100000); //n intero max 99999
+
+    /* deve cambiare anche anche la classe di tiket rendendolo visibile _______non ora */
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**** *********************************************************/
+/**** *********************************************************/
+/**** *********************************************************/
+/**** *********************************************************/
+/**** *********************************************************/
