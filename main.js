@@ -6,6 +6,7 @@ let userId; //   NOME UTENTE
 let userTravelWidth; //  USER KM 
 let userAge;//  USER AGE
 
+const trainTiket=document.getElementById("train-tiket");
 /**** BOTTONI ***************/
 //bottone stampa biglietto
 const btnTiketPrinter = document.getElementById("btn-tiket-printer");
@@ -106,12 +107,9 @@ btnTiketPrinter.addEventListener("click", function () {
     const tiketUserPrice = document.getElementById("tiket-user-price");
     tiketUserPrice.innerHTML=`${(priceList.toFixed(2))} €`
    
-
-
     /**** HTML insert value + PRINTER *************************************/
     //creo le variabili-etichetta all'interno della funzione e poi le stampo.
     //esistono solo nell'arco di tempo in cui la funzione viene eseguita. 
-
 
 
     // tiket  carriage
@@ -122,20 +120,22 @@ btnTiketPrinter.addEventListener("click", function () {
     const tiketUserCp = document.getElementById("tiket-user-CP");
     tiketUserCp.innerHTML = Math.floor(Math.random() * 100000); //n intero max 99999
 
-    /* deve cambiare anche anche la classe di tiket rendendolo visibile _______non ora */
+ /* deve cambiare anche anche la classe di tiket rendendolo visibile */
+ 
+
+
 });
 
+/* seconda funzione */
+/* btnCancel.addEventListener("click", function(){
+
+    //reset text input
+    //reset number input
+    //reset select
+    //reset biglietto
+
+} */
 
 
 
 
-
-
-
-
-
-/**** *********************************************************/
-/**** *********************************************************/
-/**** *********************************************************/
-/**** *********************************************************/
-/**** *********************************************************/
