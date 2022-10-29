@@ -6,27 +6,31 @@ let userId; //   NOME UTENTE
 let userTravelWidth; //  USER KM 
 let userAge;//  USER AGE
 
-/**** BOTTONI *********************************************************/
+/**** BOTTONI ***************/
 //bottone stampa biglietto
 const btnTiketPrinter = document.getElementById("btn-tiket-printer");
 //bottone annulla
 const btnCancel = document.getElementById("cancel");
 
-/* INIZIO FUNZIONE */
+/* INIZIO FUNZIONE ****************************************************/
 //evento:click
 btnTiketPrinter.addEventListener("click", function () {
-
-    // NOME UTENTE  al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userId
+    
+    /**** NOME UTENTE  *******************/
+    // al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userId
     userId = document.getElementById("user-id").value;
     console.log(`userId = ${userId} typeof uI ${typeof userId} parseint uI${parseInt(userId)};`);//controllo valore
-    /* controlli sul nome 
-    se non è nan*/
 
-    //anche il parseint di una stringa alfanumerica isNaN = true.____________________________devo escogitare qualcosa
+    //CONTROLLI USERID::
+
+    // 1) il parseint di una stringa alfanumerica isNaN = true.
+    // 2)"" isNaN 
+
     if (isNaN(parseInt(userId))) {
 
         console.log(`${parseInt(userId)} ${typeof userId}`);
-        // user id 
+
+        // tiket user id 
         const tiketUserId = document.getElementById("tiket-user-id");
         tiketUserId.innerHTML = (`${userId}`);
 
@@ -34,7 +38,9 @@ btnTiketPrinter.addEventListener("click", function () {
         console.log(`${parseInt(userId)} ${typeof userId}`);
         alert("please, enter a correct value");
     }
-    // USER KM al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userTravelWidth
+
+    /*** USER KM ************************/
+    //  al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userTravelWidth
     userTravelWidth = document.getElementById("user-travel-width").value;
     console.log(`userTravelWidth = ${userTravelWidth} ${typeof userTravelWidth}`);
 
@@ -52,7 +58,17 @@ btnTiketPrinter.addEventListener("click", function () {
         console.log("n km= ", userTravelWidth, typeof userTravelWidth);
     }
 
+//USER AGE al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userAge
+userAge = document.getElementById("user-age").value;
+console.log(`userAge = ${userAge}`);
 
+if (userAge=="a"){
+    console.log(`userAge value = ${userAge}  MINORENNE`);
+} else if(userAge=="c"){
+    console.log(`userAge value = ${userAge}  OVER65`);
+}else{
+    console.log(`userAge value = ${userAge}  MAGGIORENNE`);
+}
 
     //PREZZO...................................................
 
@@ -71,39 +87,17 @@ btnTiketPrinter.addEventListener("click", function () {
 
 
 
-    // carriage
+    // tiket  carriage
     const tiketUserSpot = document.getElementById("tiket-user-spot");
     tiketUserSpot.innerHTML = Math.floor(Math.random() * 11);//n intero max 10
 
-    // CP code 
+    // tiket  CP code 
     const tiketUserCp = document.getElementById("tiket-user-CP");
     tiketUserCp.innerHTML = Math.floor(Math.random() * 100000); //n intero max 99999
 
     /* deve cambiare anche anche la classe di tiket rendendolo visibile _______non ora */
 });
 
-/* _________________________________________________________________________________________________ */
-
-//USER AGE al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userAge
-/* userAge = document.getElementById("user-age");
-console.log(`userAge = ${userAge.value}`);
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-userAge.addEventListener("change", function () {
-    console.log(`userAge = ${userAge}userAge.value = ${userAge.value}`);
-    userAge = userAge.value;
-    console.log(`userAge = ${userAge}`);
-})
- */
-
-/* IL PROBLEMA CHE MI AFFLIGGE: 
-
-quando scelgo l'opzione della select, da console visualizzo l'input correttamente, ma quando tento di costruire una if (sia dentro alla funzione clikbottone, sia dentro alla funzione changeselect, mi imposta sempre come vera la prima condizione dell'if, e mi aggiorna di conseguenza anche l'html anche se un secondo prima mi dava selezionata un'altra pozione. MI SFUGGE QUALCOSA CHE FUNZIONA SIMILMENTE ALLO STUPIDO BUTTON DI PRIMA )
-
-
-
-*/
-/* _-_-____________________________________________________________________________________________ */
 
 
 
