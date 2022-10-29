@@ -1,57 +1,100 @@
 
-/**** VARIABILI ETA'************************************/
+//* DATI UTENTE */
 
-//recupero data corrente:
-const currentData = new Date; //______________________________
-//____________________________potrei stamparla sul biglietto!!!!
-console.log(currentData);
-
-//estraggo solamente l'anno dalla data corrente
-const currentYear = (new Date).getFullYear();
-console.log(currentYear);
+//KM.............................................................
+let userTravelWidth = prompt(`Please,
+enter the number of kilometers you wish to travel`);
+console.log("n km = ", userTravelWidth, typeof userTravelWidth);
 
 
-/*****VARIABILI TRATTA ************************************/
+if (isNaN(userTravelWidth)) {
+    alert("please, enter a correct value");
+    //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt
+//se valore <1
+}else if (userTravelWidth < 1) {
+    alert("this trip is too short! please, try again");
+    //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt
+}else{
+    userTravelWidth= parseInt(userTravelWidth);
+    console.log("n km= ", userTravelWidth, typeof userTravelWidth);
+}
+
+
+//ANNO DI NACITA....................................................... 
+//Qui rimuovo il parseint perchè voglio effettuare un controllo sulla lunghezza della stringa inserita (se è già convertito a numero, non posso!)
+
+ //recupero data corrente:
+ const currentData = new Date;
+ // console.log (currentData); 
+
+ //estraggo solamente l'anno dalla data corrente
+ const currentYear = currentData.getFullYear();
+ console.log(currentYear);
+
+ /*ALTERNATIVA
+ const currentYear= (new Date).getFullYear();
+ console.log (currentYear); */
+
+let userBirthYear = prompt(`Please,
+enter your year of birth in extended form`);
+console.log(`userBirthYear typeoff = ${typeof userBirthYear}`);
+
+if (isNaN(userBirthYear)){
+    alert("please, enter a correct value");
+    /* 130 è l'età massima che immagino possa avere l'utente che si sta interfacciando al mio sito*/
+} else if (userBirthYear < (currentYear - 150) ) {
+    alert(`incorrect value.
+    sorry,
+    you are too ancient to travel with us, find a carriage!`);
+    //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt   
+}else if (userBirthYear >currentYear) {
+    alert(`incorrect value.
+    we doubt you are comeing from the future, try again!`);
+    //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt   
+} else {
+    userBirthYear = parseInt(userBirthYear);
+    console.log(`userBirthYear con parseINt typeoff= ${typeof userBirthYear}`);
+}
+//ottengo l'età effettiva dell'utente sottraendo dall'anno corrente il dato inserito dall'utente
+    const userAge = currentYear - userBirthYear;
+    console.log(userAge);
 
 
 
-/**** VARIABILI PREZZO ************************************/
+//PREZZO...................................................
+
 /* calcolo prezzo base €/km */
-const price = (userTravelWidth * .21);
-/* console.log(price); */
+    const price = (userTravelWidth * .21);
+    console.log(price);
 
-/* dichiaro priceList ma assegno il valore dentro le if/else */
-let priceList
+    /* dichiaro priceList ma assegno il valore dentro le if/else */
+    let priceList
 
+    //condizioni  
+    //se utente minorenne : sconto 20%
+    //calc: x:price=%:100  
 
-/**** HTML insert value *************************************/
+    if (userAge < 18) {
+        //price - price * 20 /100
+        priceList = (price - price * .2);
+        console.log("priceList miniorenne =", priceList);
 
-//Offer
-const tiketUserOffer = document.getElementById("tiket-user-offer");
-//carriage (assegnare valore random 2 cifre)
-const tiketUserSpot = document.getElementById("tiket-user-spot");
-//code CP (assegnare valore random 5 cifre)
-const tiketUserCp = document.getElementById("tiket-user-CP");
-//tiket price
-const tiketUserPrice = document.getElementById("tiket-user-price");
+        //se utente over65 : sconto 40%  
+    } else if (userAge >= 65) {
 
+        priceList = (price - price * .4);
+        console.log("priceList over65 =", priceList);
 
-/*** BOTTONI *************************************************/
+        /* tutti coloro che non sono nè minorenni nè over 65 */
+    } else {
 
-const btnGenerateTiket = document.getElementById("generate-tiket");
-console.log(`btnGenerateTiket ${btnGenerateTiket}`)
+        priceList = price
+        console.log("userPrice 65>user>18=", priceList);
+    }
 
-const btnCancel = document.getElementById("cancel");
+    //a tutti aggiungo l'euro e tolgo i decimali in eccesso
+    //per fatrlo ho bisogno che la voariabile uscente abbia lo stesso nome per tutti gli if
 
-/* questo bottone deve stampare e trasformare variabili */
-btnGenerateTiket.addEventListener("click", function () {
-
-    //nome passeggero
-    const tiketUserId = document.getElementById("tiket-user-id");
-     /* stampo nome utente sul biglietto */
-    tiketUserId.innerHTML = (`${userId.value}`);
-
-    console.log(`userTravelWidth ${userTravelWidth}`);
-    userTravelWidth = (userTravelWidth.value);
-    console.log(`userTravelWidth ${userTravelWidth}`);
-})
+    userPrice = `${(priceList.toFixed(2))} €`;
+    console.log(userPrice);
+    alert(`the final price for your trip is ${(priceList.toFixed(2))} €. Have a nice trip!`);
