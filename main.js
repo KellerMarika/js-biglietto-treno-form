@@ -1,26 +1,59 @@
 /* QUALI VARIABILI MI SERVONO */
 
-/* dichiaro le funzioni come globali ma ne assegno il valore nella funzione (scope) */
+/* dichiaro le funzioni  globali ma ne cambio il valore nella funzione del btntiketprinter (scope) */
 
-let userId; //   NOME UTENTE 
-let userTravelWidth; //  USER KM 
-let userAge;//  USER AGE
+const userId_El = document.getElementById("user-id"); //  Elemento  (input text) user Id 
+/* console.log(`userId = ${userId} typeof ${typeof userId} parseint ${parseInt(userId)};`);//controllo valore */
 
-const trainTiket=document.getElementById("train-tiket");
+const userTravelWidth_El = document.getElementById("user-travel-width"); // Elemento ( input number)  user Km
+
+const userAge_El = document.getElementById("user-age");// Elemento (select) user Age
+
+
+
+const trainTiket_El = document.getElementById("train-tiket"); //Elemento biglietto
+
 /**** BOTTONI ***************/
-//bottone stampa biglietto
-const btnTiketPrinter = document.getElementById("btn-tiket-printer");
-//bottone annulla
-const btnCancel = document.getElementById("cancel");
+const btnTiketPrinter = document.getElementById("btn-tiket-printer");// Bottone stampa biglietto
 
-/* INIZIO FUNZIONE ****************************************************/
+const btnCancel = document.getElementById("cancel"); //Bottone annulla
+
+
+/* INIZIO FUNZIONE  CANCEL****************************************************/
+//la scrivo prima, così il valore dei userId, userTravelWidth, userAge non sono ancora modificati nella funzione successiva
+btnCancel.addEventListener("click", function () {
+
+    /* TRAIN tiket */
+    //deve sempre esserci mai la classe d-none
+    trainTiket_El.classList.toggle("d-none", true);
+
+    console.log("userId_El", userId_El)
+    console.log(userId_El.value)
+
+    userId_El.value="";
+
+
+ 
+
+
+    /* userTravelWidth="1"; 
+    userAge="over65";
+     */
+
+});
+
+
+
+
+
+/* INIZIO FUNZIONE PRINTER TIKET ****************************************************/
 //evento:click
 btnTiketPrinter.addEventListener("click", function () {
 
     /**** NOME UTENTE  *******************/
     // al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userId
-    userId = document.getElementById("user-id").value;
-    console.log(`userId = ${userId} typeof uI ${typeof userId} parseint uI${parseInt(userId)};`);//controllo valore
+    const userId = userId_El.value//valore user Id
+    console.log(`userId = ${userId} typeof ${typeof userId} parseint ${parseInt(userId)};`);//controllo valore
 
     //CONTROLLI USERID::
 
@@ -29,20 +62,18 @@ btnTiketPrinter.addEventListener("click", function () {
 
     if (isNaN(parseInt(userId))) {
 
-        console.log(`${parseInt(userId)} ${typeof userId}`);
-
         // tiket user id 
-        const tiketUserId = document.getElementById("tiket-user-id");
-        tiketUserId.innerHTML = (`${userId}`);
+        const tiketUserId_El = document.getElementById("tiket-user-id");
+        tiketUserId_El.innerHTML = (`${userId}`);
 
     } else {
-        console.log(`${parseInt(userId)} ${typeof userId}`);
         alert("please, enter a correct value");
     }
 
     /*** USER KM ************************/
     //  al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userTravelWidth
-    userTravelWidth = document.getElementById("user-travel-width").value;
+
+    const userTravelWidth = parseInt(userTravelWidth_El.value) //valore user Km input number 
     console.log(`userTravelWidth = ${userTravelWidth} ${typeof userTravelWidth}`);//controllo valore
 
     //CONTROLLI SUI KM::
@@ -54,14 +85,11 @@ btnTiketPrinter.addEventListener("click", function () {
     } else if (userTravelWidth < 1) {
         alert("this trip is too short! please, try again");
         //dovrebbe rimandare all'inizio del ciclo riaprendo il prompt
-    } else {
-        userTravelWidth = parseInt(userTravelWidth);
-        console.log("n km= ", userTravelWidth, typeof userTravelWidth);
     }
 
     /*** USER AGE  ************************/
     // al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userAge
-    userAge = document.getElementById("user-age").value;
+    const userAge = userAge_El.value;
     console.log(`userAge = ${userAge}`);//controllo valore
 
 
@@ -74,7 +102,7 @@ btnTiketPrinter.addEventListener("click", function () {
     let priceList
 
     /* tiket  offer= vi stampo(innerHTML) un valore differente in base alla fascia d'età dentro le if/else */
-    const tiketUserOffer = document.getElementById("tiket-user-offer");
+    const tiketUserOffer_El = document.getElementById("tiket-user-offer");
 
     /* condizioni  
     se utente minorenne : sconto 20% ; se utente over65: sconto 40%   
@@ -85,56 +113,51 @@ btnTiketPrinter.addEventListener("click", function () {
     if (userAge == "disc20-100") {
 
         priceList = (price * .8);
-        tiketUserOffer.innerHTML = "scono 20% Minorenni";
+        tiketUserOffer_El.innerHTML = "scono 20% Minorenni";
         //over65
     } else if (userAge == "disc40-100") {
 
         priceList = (price * .6);
-        tiketUserOffer.innerHTML = "scono 40% Over65";
+        tiketUserOffer_El.innerHTML = "scono 40% Over65";
         //tutti gli altri
     } else {
         priceList = price;
-        tiketUserOffer.innerHTML = "prezzo intero adulti";
+        tiketUserOffer_El.innerHTML = "prezzo intero adulti";
     }
 
 
     //a tutti aggiungo l'euro e tolgo i decimali in eccesso
     //per fatrlo ho bisogno che la voariabile uscente abbia lo stesso nome per tutti gli if
-    userPrice = `${(priceList.toFixed(2))} €`;
+    const userPrice = `${(priceList.toFixed(2))} €`;
     console.log(userPrice);
 
 
-    const tiketUserPrice = document.getElementById("tiket-user-price");
-    tiketUserPrice.innerHTML=`${(priceList.toFixed(2))} €`
-   
+    const tiketUserPrice_El = document.getElementById("tiket-user-price");
+    tiketUserPrice_El.innerHTML = `${(priceList.toFixed(2))} €`
+
     /**** HTML insert value + PRINTER *************************************/
     //creo le variabili-etichetta all'interno della funzione e poi le stampo.
     //esistono solo nell'arco di tempo in cui la funzione viene eseguita. 
 
 
     // tiket  carriage
-    const tiketUserSpot = document.getElementById("tiket-user-spot");
-    tiketUserSpot.innerHTML = Math.floor(Math.random() * 11);//n intero max 10
+    const tiketUserSpot_El = document.getElementById("tiket-user-spot");
+    tiketUserSpot_El.innerHTML = Math.floor(Math.random() * 11);//n intero max 10
 
     // tiket  CP code 
-    const tiketUserCp = document.getElementById("tiket-user-CP");
-    tiketUserCp.innerHTML = Math.floor(Math.random() * 100000); //n intero max 99999
+    const tiketUserCp_El = document.getElementById("tiket-user-CP");
+    tiketUserCp_El.innerHTML = Math.floor(Math.random() * 100000); //n intero max 99999
 
- /* deve cambiare anche anche la classe di tiket rendendolo visibile */
- 
 
+    /* TRAIN tiket */
+    //non deve esserci mai la classe d-none
+    trainTiket_El.classList.toggle("d-none", false);
 
 });
 
-/* seconda funzione */
-/* btnCancel.addEventListener("click", function(){
 
-    //reset text input
-    //reset number input
-    //reset select
-    //reset biglietto
 
-} */
+
 
 
 
