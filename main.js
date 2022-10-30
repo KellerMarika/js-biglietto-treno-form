@@ -27,19 +27,19 @@ btnCancel.addEventListener("click", function () {
     //deve sempre esserci mai la classe d-none
     trainTiket_El.classList.toggle("d-none", true);
 
-    console.log("userId_El", userId_El)
-    console.log(userId_El.value)
 
-    userId_El.value="";
+    /* reset UserId_Element **********/
 
+    console.log("userId_El", userId_El, userId_El.value)
+    userId_El.value = "";
 
- 
+    /* reset UserTravelWidth_Element *************************/
+    console.log("userTravelWidth_El", userTravelWidth_El, userTravelWidth_El.value)
+    userTravelWidth_El.value = "";
 
-
-    /* userTravelWidth="1"; 
-    userAge="over65";
-     */
-
+    /* reset UserAge_Element **********/
+    console.log("userAge_El", userAge_El, userAge_El.value)
+    userAge_El.value = "disc0"
 });
 
 
