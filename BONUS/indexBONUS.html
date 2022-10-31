@@ -78,11 +78,11 @@
                                                     <!-- id const userBirthYear -->
                                                     <div id="My_select" class="pb-2">
                                                         <div class="myy-select-label py-3 fs-5">Passengers:</div>
-                                                        <div class="option-container">
+                                                        <div class="option-container option_1">
                                                             <div class="d-flex ">
 
                                                                 <div class="flex-grow-1">
-                                                                    <span class="option_1">Adult</span>
+                                                                    <span class="">Adult</span>
                                                                 </div>
                                                                 <!-- 2 contantori su btn + e btn - che al click incrementano o decrementano il valore dello span centrale. 
                                                             una volta cliccato il bottone input generate, il valore aggiornato nello span viene moltiplicato per il prezzo del biglietto relativo alla fascia d'età -->
@@ -93,18 +93,18 @@
 
                                                                     <span class="contatore"> </span>
 
-                                                                    <button class=" my_btn-small ">
+                                                                    <button class=" my_btn-small btn-plus ">
                                                                         <i class="fa-solid fa-plus"></i>
                                                                     </button>
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <div class="option-container">
+                                                        <div class="option-container option_2">
                                                             <div class="d-flex">
 
                                                                 <div class=" flex-grow-1">
-                                                                    <span class="option_2">student (11-17)</span>
+                                                                    <span class="">student (11-17)</span>
                                                                 </div>
 
                                                                 <div class=" text-end">
@@ -114,22 +114,23 @@
 
                                                                     <span class="contatore"> </span>
 
-                                                                    <button class=" my_btn-small ">
+                                                                    <button class=" my_btn-small btn-plus ">
                                                                         <i class="fa-solid fa-plus"></i>
                                                                     </button>
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <div class="option-container">
+                                                        <div class="option-container option_3">
                                                             <div class="d-flex">
 
                                                                 <div class="flex-grow-1">
-                                                                    <span class="option_3">Ancient (>120)</span>
+                                                                    <span class="">Ancient (>120)</span>
                                                                 </div>
 
                                                                 <div class=" text-end">
-                                                                    <button class="my_btn-small btn-minus ">
+                                                                 
+                                                                    <button class="my_btn-small btn-minus  btn-plus">
                                                                         <i class="fa-solid fa-minus"></i>
                                                                     </button>
 
@@ -179,9 +180,11 @@
 
                                                         <!-- codice sconto bunner -->
                                                         <!-- al clic si ape un prompt dove caricare il codice del bunner leviosa -->
-                                                        <button class="small my_btn mt-3">
-                                                            <!-- icon --> aggiungi un codice sconto
-                                                        </button>
+
+                                                        <input type="button" id="btn-add-discount" class="small my_btn mt-3" value=" aggiungi un codice sconto">
+                                                     
+                                                     
+                                                    
 
 
                                                         <div class="d-flex justify-content-between">
@@ -206,11 +209,12 @@
                                                     Platform 9 <sup>3/4</sup> directly to your home!</h3>
 
                                                 <div id="leviosa" class="bunner text-center">
-                                                    <h2>get discount</h2>
-                                                    <button class="my_btn"> click to get discount <div
-                                                            class="uppercase">
-                                                            it's-leviosa-not-leviosaaa</div></button>
+                                                    <h2>get discount:</h2>
+                                                    <button id="btn-get-discount"class="my_btn"> click for discount </button>
                                                     <!-- appare e scompare con effetto dissolvenza (tipo mappa del malandrino) -->
+                                                    <div id="leviosa-discount" class=" position-relative mt-4 fw-bold opacity-0 fs-5
+                                                    ">IT'S-LEVIOSA-NOT-LEVIOSAAA</div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -286,7 +290,27 @@
     </section>
 
 
+    <div class="container option-container option_3 bg-light">
+        <div class="d-flex">
 
+            <div class="flex-grow-1">
+                <span class="">Ancient (>120)</span>
+            </div>
+
+            <div class=" text-end">
+             
+                <button id="minus" class="my_btn-small btn-minus  btn-plus">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+
+                <span class="contatore"> </span>
+
+                <button id="plus" class=" my_btn-small ">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
 
     <script src="scriptBONUS.js"></script>

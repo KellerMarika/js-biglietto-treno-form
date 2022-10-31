@@ -4,8 +4,6 @@ body {
     cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
 }
 
-
-
 .my_imput {
     font-family: 'Homemade Apple', cursive;
     background-color: transparent;
@@ -103,4 +101,15 @@ body {
 #jumbotrone {
     padding-top: 70px;
 
+}
+
+/***** EFFETTI ************************/
+
+#btn-discount{
+    transition: all 1s
+}
+#leviosa-discount{
+    letter-spacing:0.2rem;
+    transition: all 2s 1s;
+    top: -60px;
 }
