@@ -2,22 +2,48 @@
 
 /* dichiaro le funzioni  globali ma ne cambio il valore nella funzione del btntiketprinter (scope) */
 
-const userId_El = document.getElementById("user-id"); //  Elemento  (input text) user Id 
-let userId=userId_El.value
- console.log(`userId = ${userId} typeof ${typeof userId} parseint ${parseInt(userId)};`);//controllo valore */
+/* const userId_El = document.getElementById("user-id"); */ //  Elemento  (input text) user Id 
+/* console.log(`userId = ${userId} typeof ${typeof userId} parseint ${parseInt(userId)};`);//controllo valore */
 
-const userTravelWidth_El = document.getElementById("user-travel-width"); // Elemento ( input number)  user Km
+/* const userTravelWidth_El = document.getElementById("user-travel-width");  */// Elemento ( input number)  user Km
 
-const userAge_El = document.getElementById("user-age");// Elemento (select) user Age
-
+/* const userAge_El = document.getElementById("user-age"); */// Elemento (select) user Age
 
 
-const trainTiket_El = document.getElementById("train-tiket"); //Elemento biglietto
+/* 
+const trainTiket_El = document.getElementById("train-tiket"); */ //Elemento biglietto
 
 /**** BOTTONI ***************/
-const btnTiketPrinter = document.getElementById("btn-tiket-printer");// Bottone stampa biglietto
+/* const btnTiketPrinter = document.getElementById("btn-tiket-printer"); */// Bottone stampa biglietto
+ //Bottone annulla
 
-const btnCancel = document.getElementById("cancel"); //Bottone annulla
+ 
+
+/* INIZIO FUNZIONE  CANCEL****************************************************/
+//la scrivo prima, così il valore dei userId, userTravelWidth, userAge non sono ancora modificati nella funzione successiva
+btnCancel.addEventListener("click", function () {
+
+    /* TRAIN tiket */
+    //deve sempre esserci mai la classe d-none
+    trainTiket_El.classList.toggle("d-none", true);
+
+
+    /* reset UserId_Element **********/
+
+    console.log("userId_El", userId_El, userId_El.value)
+    userId_El.value = "";
+
+    /* reset UserTravelWidth_Element *************************/
+    console.log("userTravelWidth_El", userTravelWidth_El, userTravelWidth_El.value)
+    userTravelWidth_El.value = "";
+
+    /* reset UserAge_Element **********/
+    console.log("userAge_El", userAge_El, userAge_El.value)
+    userAge_El.value = "disc0"
+});
+
+
+
 
 
 /* INIZIO FUNZIONE PRINTER TIKET ****************************************************/
@@ -26,7 +52,7 @@ btnTiketPrinter.addEventListener("click", function () {
 
     /**** NOME UTENTE  *******************/
     // al btn-click raccolgo il valore dell'input e lo assegno come valore della variabile userId
-    userId = userId_El.value//valore user Id
+    const userId = userId_El.value//valore user Id
     console.log(`userId = ${userId} typeof ${typeof userId} parseint ${parseInt(userId)};`);//controllo valore
 
     //CONTROLLI USERID::
@@ -130,26 +156,6 @@ btnTiketPrinter.addEventListener("click", function () {
 });
 
 
-/* INIZIO FUNZIONE  CANCEL****************************************************/
-//la scrivo prima, così il valore dei userId, userTravelWidth, userAge non sono ancora modificati nella funzione successiva
-btnCancel.addEventListener("click", function () {
-
-    /* TRAIN tiket */
-    //deve sempre esserci mai la classe d-none
-    trainTiket_El.classList.toggle("d-none", true);
 
 
-    /* reset UserId_Element **********/
 
-    console.log("userId_El", userId_El, userId)
-    userId="";
-    userId_El.value=userId
-    console.log("userId_El", userId_El, userId)
-    /* reset UserTravelWidth_Element *************************/
-    console.log("userTravelWidth_El", userTravelWidth_El, userTravelWidth_El.value)
-    userTravelWidth_El.value = "";
-
-    /* reset UserAge_Element **********/
-    console.log("userAge_El", userAge_El, userAge_El.value)
-    userAge_El.value = "disc0"
-});

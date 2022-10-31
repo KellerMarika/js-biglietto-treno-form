@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- indispensabile per far funzionare le media-queries -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOGWARTS EXPRESS</title>
+
+
+
+    <!--font-family: 'Special Elite', cursive;  -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+
+    <!-- font-family: 'Homemade Apple', cursive; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <!-- font-family: fontawesome -->
+    <script src="https://kit.fontawesome.com/a19b158346.js" crossorigin="anonymous"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <!-- my-css -->
+    <link rel="stylesheet" href="styleBONUS.css">
+    <!-- <link rel="stylesheet" href="css/style-media.css"> -->
+</head>
+
+<body class="my-magic-bg">
+
+    <section>
+        <div id="main-container" class="container">
+            <div class="row">
+                <div class="col-8">
+                    <!-- booking-form switch con train-tiket _____generate -->
+                    <div id="booking-form">
+                        <div class="row row-cols-1 position-relative">
+                            <!-- immagine paper fissa -->
+                            <div class="col bg-tiket">
+                                <div class="img-paper">
+                                    <img src="img/old-paper39.png" alt="">
+                                </div>
+                            </div>
+
+                            <!-- contenuto paper -->
+                            <div class="col booking-content-col position-absolute">
+                                <div id="options-container" class=" my-paper-bg">
+                                    <div class="row">
+
+                                        <!-- ******** BOOKING SECTION ********************************* -->
+                                        <div class="col-5">
+
+                                            <form action="get">
+                                                <fieldset>
+                                                    <!-- legenda -->
+                                                    <legend class="fs-3 fw-bold">Book train Tiket</legend>
+
+                                                    <!-- id const userId -->
+                                                    <label class="d-block fs-5" for="user-id">wizard/witch Name:
+                                                    </label>
+                                                    <input id="user-id" class=" my_imput" type="text" name="user-id"
+                                                        minlength="2">
+
+
+                                                    <!-- id const userTravelWidth -->
+                                                    <label class="d-block pt-2 fs-5" for="user-travel-width">Km to
+                                                        travel:</label>
+                                                    <input id="user-travel-width" class=" my_imput" type="number"
+                                                        name="user-travel-width"  minlength="1">
+
+
+                                                    <!-- id const userBirthYear -->
+                                                    <div id="My_select" class="pb-2">
+                                                        <div class="myy-select-label py-3 fs-5">Passengers:</div>
+                                                        <div class="option-container">
+                                                            <div class="d-flex ">
+
+                                                                <div class="flex-grow-1">
+                                                                    <span class="option_1">Adult</span>
+                                                                </div>
+                                                                <!-- 2 contantori su btn + e btn - che al click incrementano o decrementano il valore dello span centrale. 
+                                                            una volta cliccato il bottone input generate, il valore aggiornato nello span viene moltiplicato per il prezzo del biglietto relativo alla fascia d'età -->
+                                                                <div class="col text-end">
+                                                                    <button class="my_btn-small btn-minus ">
+                                                                        <i class="fa-solid fa-minus"></i>
+                                                                    </button>
+
+                                                                    <span class="contatore"> </span>
+
+                                                                    <button class=" my_btn-small ">
+                                                                        <i class="fa-solid fa-plus"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="option-container">
+                                                            <div class="d-flex">
+
+                                                                <div class=" flex-grow-1">
+                                                                    <span class="option_2">student (11-17)</span>
+                                                                </div>
+
+                                                                <div class=" text-end">
+                                                                    <button class="my_btn-small btn-minus ">
+                                                                        <i class="fa-solid fa-minus"></i>
+                                                                    </button>
+
+                                                                    <span class="contatore"> </span>
+
+                                                                    <button class=" my_btn-small ">
+                                                                        <i class="fa-solid fa-plus"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="option-container">
+                                                            <div class="d-flex">
+
+                                                                <div class="flex-grow-1">
+                                                                    <span class="option_3">Ancient (>120)</span>
+                                                                </div>
+
+                                                                <div class=" text-end">
+                                                                    <button class="my_btn-small btn-minus ">
+                                                                        <i class="fa-solid fa-minus"></i>
+                                                                    </button>
+
+                                                                    <span class="contatore"> </span>
+
+                                                                    <button class=" my_btn-small ">
+                                                                        <i class="fa-solid fa-plus"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div id="booking-footer">
+                                                        <!-- hide -->
+                                                        <div class="text-center">
+                                                            <!-- add event listner click : qualdo  nel div dentro al bottone il valore è === other age groups" allora sostituiscilo con innerHTML icona + hide e togli d-none a : student e ancient-->
+                                                            <button id="age-dropdown" class=" my-dropdown">
+                                                                <div> <i class="fa-solid fa-chevron-down"></i>other age
+                                                                    groups
+                                                                </div>
+                                                                <!-- innerHTML -->
+
+                                                                <!-- add event listner click : qualdo  nel div dentro al bottone il valore è === "icona + hide" allora sostituiscilo con innerHTML "icona + other age
+                                                                groups" e aggiungi classe d-none a : student e ancient -->
+                                                                <div><i class="fa-solid fa-chevron-up"></i>hide </div>
+                                                            </button>
+                                                        </div>
+
+
+                                                        <div id="familiar-select"
+                                                            class="d-flex justify-content-between align-items-end">
+                                                            <label class="flex-grow-1" for="user-age">Add a familiar
+                                                            </label>
+
+
+                                                            <select name="user-age" id="user-age"
+                                                                class="my_imput border-0 w-auto ">
+                                                                <option value="" selected></option>
+                                                                <option value="owl">Owl</option>
+                                                                <option value="toad">Toad</option>
+                                                                <option value="rat">Rat</option>
+                                                                <option value="ferret">Ferret</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- codice sconto bunner -->
+                                                        <!-- al clic si ape un prompt dove caricare il codice del bunner leviosa -->
+                                                        <button class="small my_btn mt-3">
+                                                            <!-- icon --> aggiungi un codice sconto
+                                                        </button>
+
+
+                                                        <div class="d-flex justify-content-between">
+                                                            <!-- eventlistner click replace class to tiket  eventlistner click valori tabella  =const -->
+                                                            <input type="button" class="my_btn" value="Generate"
+                                                                id="btn-tiket-printer">
+
+                                                            <!-- id button btnCancel  eventlistner click replace class to tiket  eventlistner click valore user.ecc,ecc ="" -->
+                                                            <input type="button" class="my_btn" value="Cancel"
+                                                                id="cancel">
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+
+                                        <!--    ************** JUMBOTRONE ************************* -->
+                                        <div class="col-7">
+                                            <div id="jumbotrone" class=" px-3">
+                                                <h1 class="title text-uppercase">HOGWARTS EXPRESS</h1>
+                                                <h3 class="subtitle">
+                                                    Platform 9 <sup>3/4</sup> directly to your home!</h3>
+
+                                                <div id="leviosa" class="bunner text-center">
+                                                    <h2>get discount</h2>
+                                                    <button class="my_btn"> click to get discount <div
+                                                            class="uppercase">
+                                                            it's-leviosa-not-leviosaaa</div></button>
+                                                    <!-- appare e scompare con effetto dissolvenza (tipo mappa del malandrino) -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- train tiket switch con booking-form _____generate-->
+                    <div id="train-tiket">
+                        <!-- definisco una dimensione con la griglia -->
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+
+                                <!-- su di essa si basa la posizione del tiket-container in absolute sull'immagine del biglietto -->
+                                <div class="row row-cols-1 position-relative">
+
+                                    <!-- immagine biglietto come sfondo -->
+                                    <div class="col bg-tiket">
+                                        <div class="img-tiket">
+                                            <img src="img/bg-tiket.jpg" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- contenuto in absolute (mantiene le dimensioni grazie alla struttura di row e col di bootstrap) -->
+                                    <div class="col tiket-content-col text-center  position-absolute">
+
+                                        <div class="tiket-name">
+                                            <h4 class="text-uppercase fw-bold">Passenger's Name</h4>
+
+                                            <!-- id  innertext -->
+                                            <div id="tiket-user-id"></div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center">
+                                            <table class="text-center">
+                                                <!-- voci sopra alle innertext -->
+                                                <thead>
+                                                    <tr>
+                                                        <th>carriage</th>
+                                                        <th>CP code</th>
+                                                        <th>Offer</th>
+                                                        <th>tiket price</th>
+                                                        <th>familiar</th>
+                                                    </tr>
+                                                </thead>
+                                                <!-- innertext nelle colonne del footer -->
+                                                <tbody>
+                                                    <tr>
+                                                        <!-- id  innertext -->
+                                                        <td id="tiket-user-spot">carrozza</td>
+                                                        <!-- id  innertext -->
+                                                        <td id="tiket-user-CP">codice CP</td>
+                                                        <!-- id  innertext -->
+                                                        <td id="tiket-user-offer">Offer</td>
+                                                        <!-- id  innertext -->
+                                                        <td id="tiket-user-price">Costo biglietto</td>
+                                                        <!-- id  innertext -->
+                                                        <td id="tiket-user-familiar">familiar</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="scriptBONUS.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+body {
+    font-family: 'Special Elite', cursive;
+    color: #5c554a;
+    cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
+}
+
+
+
+.my_imput {
+    font-family: 'Homemade Apple', cursive;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dashed black;
+    width: 75%;
+}
+
+.my_imput:focus,
+.my_imput:active {
+    background-color: transparent;
+    border: none;
+}
+
+.my_btn {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 4px 16px;
+    margin: 5px;
+}
+
+.my_btn-small,
+.my-dropdown {
+    border: none;
+    background-color: transparent;
+    transition: all 0.2s;
+}
+
+.my_btn-small * {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 4px 6px;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.my_btn:hover,
+.my_btn-small:hover *,
+.my-dropdown:hover * {
+    font-weight: bold;
+    border-width: 2px;
+
+}
+
+/* sfond0 *************************/
+.my-magic-bg {
+    background-image: url(img/BG-HOGWARTS.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+
+/**** BOOKING SECTION *************/
+
+#options-container {
+    padding: 50px;
+    padding-bottom: 20px;
+}
+
+#main-container {
+    margin-top: 22vh;
+}
+
+#main-container .row {
+    border-color: black;
+}
+
+#leviosa {
+    padding-top: 40px;
+}
+
+
+.img-paper img {
+    width: 100%;
+    margin-left: -20px;
+}
+
+/**** BOOKING SECTION *************/
+
+.tiket-name {
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+
+
+#familiar-select {
+    border-bottom: 1px dashed black;
+}
+
+/****JUMBOTRONE ****************/
+
+#jumbotrone {
+    padding-top: 70px;
+
+}
