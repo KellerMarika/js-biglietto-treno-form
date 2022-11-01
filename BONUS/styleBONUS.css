@@ -52,7 +52,7 @@ body {
 .my_btn:hover,
 .my_btn-small:hover *,
 .my-dropdown:hover * {
-    font-weight: bold
+    font-weight: bold;
     color: bisque;
 }
 
