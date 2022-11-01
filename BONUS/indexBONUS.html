@@ -88,7 +88,7 @@
                                                             una volta cliccato il bottone input generate, il valore aggiornato nello span viene moltiplicato per il prezzo del biglietto relativo alla fascia d'età -->
                                                         <div id="adult" class="col text-end">
 
-                                                            <button value="" class="my_btn-small btn-minus adult ">
+                                                            <button value="" class="my_btn-small btn-minus adult">
 
                                                                 <i class="fa-solid fa-minus"></i>
                                                             </button>
@@ -135,7 +135,7 @@
 
                                                         <div id="ancient" class=" text-end">
 
-                                                            <button class="my_btn-small btn-minus ancient ">
+                                                            <button class="my_btn-small btn-minus ancient">
                                                                 <i class="fa-solid fa-minus"></i>
                                                             </button>
 
@@ -225,8 +225,12 @@
                             </div>
                         </div>
                     </div>
+
+
+
+                    
                     <!-- train tiket switch con booking-form _____generate-->
-                    <div id="train-tiket">
+                    <div id="train-tiket" class="d-none">
                         <!-- definisco una dimensione con la griglia -->
                         <div class="row justify-content-center">
                             <div class="col-8">
@@ -245,10 +249,9 @@
                                     <div class="col tiket-content-col text-center  position-absolute">
 
                                         <div class="tiket-name">
-                                            <h4 class="text-uppercase fw-bold">Passenger's Name</h4>
-
                                             <!-- id  innertext -->
-                                            <div id="tiket-user-id"></div>
+                                            <h4 id="tiket-user-id" class="text-uppercase fw-bold ">Passenger's Name</h4>  
+                
                                         </div>
 
                                         <div class="d-flex justify-content-center">

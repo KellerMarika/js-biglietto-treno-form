@@ -133,7 +133,7 @@ btnTiketPrinter.addEventListener("click", function () {
 
 
     const tiketUserPrice_El = document.getElementById("tiket-user-price");
-    tiketUserPrice_El.innerHTML = `${(priceList.toFixed(2))} €`
+    tiketUserPrice_El.innerHTML = userPrice
 
     /**** HTML insert value + PRINTER *************************************/
     //creo le variabili-etichetta all'interno della funzione e poi le stampo.
@@ -154,6 +154,46 @@ btnTiketPrinter.addEventListener("click", function () {
     trainTiket_El.classList.toggle("d-none", false);
 
 });
+
+/* FUNZIONE GET DISCOUNT ***********/
+
+let discount50
+
+/* quando clicco il bottone get discount */
+btnGetDiscount.addEventListener("click", function () {
+
+    console.log(`${discount_El}${discount_El.className}`);//controllo classi disponibili da discount_El
+    discount_El.classList.remove("opacity-0");//rendo visobile 
+    btnGetDiscount.classList.add("opacity-0");//rendo invisibile
+});
+
+
+
+/* FUNZIONE ADD DISCOUNT ***********/
+/* creo una variabile di sconto 50% sul totale. Da applicare solo se nel prompt aperto con buttonadddiscount inseriamo il testo di discount_El */
+
+
+/* quando clicco il bottone add discount */
+btnAddDiscount.addEventListener("click", function () {
+    /* viene lanciato un prompt */
+    let discount50 = prompt("inserisci qui il tuo codice:");
+
+    console.log(` discount50 = ${discount50}  
+    discount_El-innerHTML = ${discount_El.innerHTML}`);//controllo valore
+    //SE il dato inserito nel prompt dall'utente equivale al contenuto di discount_el
+    if (discount50 === discount_El.innerHTML) {
+        //lancio un alert di sconto 50 all'utente
+        alert("YOU GAIN 50% DISCOUNT!");
+        discount50 =true;
+        console.log(discount50);
+    } else {
+        //altrimenti lo insulto
+        alert("muggle, get out of here!");
+        discount50 =false;
+        console.log(discount50);
+    }
+});
+
 
 
 
