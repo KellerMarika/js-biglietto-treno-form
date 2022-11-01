@@ -44,7 +44,7 @@
                             <!-- immagine paper fissa -->
                             <div class="col bg-tiket">
                                 <div class="img-paper">
-                                    <img src="img/old-paper39.png" alt="">
+                                    <img src="img/paper.png" alt="">
                                 </div>
                             </div>
 
@@ -153,9 +153,9 @@
 
                                             <div id="booking-footer">
                                                 <!-- hide -->
-                                                <div class="text-center">
+                                                <div class="text-center ">
                                                     <!-- add event listner click : qualdo  nel div dentro al bottone il valore è === other age groups" allora sostituiscilo con innerHTML icona + hide e togli d-none a : student e ancient-->
-                                                    <input class="bg-transparent border-0 p-3" type="button"
+                                                    <input class="my_btn bg-transparent border-0 p-2" type="button"
                                                         value="other age groups" id="btn-age-dropdown"> <span
                                                         class=""><i
                                                             class=" dropdown-arrow fa-solid fa-chevron-down"></i></span>
@@ -174,7 +174,7 @@
                                                         <option value="" selected></option>
                                                         <option value="owl">Owl</option>
                                                         <option value="toad">Toad</option>
-                                                        <option value="rat">Rat</option>
+                                                        <option value="cat">Cat</option>
                                                         <option value="ferret">Ferret</option>
                                                     </select>
                                                 </div>
@@ -211,7 +211,7 @@
 
                                                 <div id="leviosa" class="bunner text-center">
                                                     <h2>get discount:</h2>
-                                                    <button id="btn-get-discount" class="my_btn p-2"> click for discount
+                                                    <button id="btn-get-discount" class="my_btn pt-2 pb-2"> click for discount
                                                     </button>
                                                     <!-- appare e scompare con effetto dissolvenza (tipo mappa del malandrino) -->
                                                     <div id="leviosa-discount" class=" position-relative mt-4 fw-bold opacity-0 fs-5
@@ -228,7 +228,7 @@
 
 
 
-                    
+                
                     <!-- train tiket switch con booking-form _____generate-->
                     <div id="train-tiket" class="d-none">
                         <!-- definisco una dimensione con la griglia -->
@@ -236,7 +236,7 @@
                             <div class="col-8">
 
                                 <!-- su di essa si basa la posizione del tiket-container in absolute sull'immagine del biglietto -->
-                                <div class="row row-cols-1 position-relative">
+                                <div class="row row-cols-1 justify-content-center position-relative">
 
                                     <!-- immagine biglietto come sfondo -->
                                     <div class="col bg-tiket">
@@ -246,42 +246,45 @@
                                     </div>
 
                                     <!-- contenuto in absolute (mantiene le dimensioni grazie alla struttura di row e col di bootstrap) -->
-                                    <div class="col tiket-content-col text-center  position-absolute">
+                                    <div class="col-7 tiket-content-col text-center  position-absolute">
 
-                                        <div class="tiket-name">
+                                        <div id="top-tiket">
+                                            <div id="tiket-spot-cp " class=" d-flex justify-content-between mt-0">
+                                                <span class="fw-bold">carriage <span id="tiket-user-spot"
+                                                        class="fw-light">carriage</span></span>
+
+                                                <span class="fw-bold">CP <span id="tiket-user-CP"
+                                                        class="fw-light">codice CP</span> </span>
+                                            </div>
                                             <!-- id  innertext -->
-                                            <h4 id="tiket-user-id" class="text-uppercase fw-bold ">Passenger's Name</h4>  
-                
-                                        </div>
 
-                                        <div class="d-flex justify-content-center">
-                                            <table class="text-center">
-                                                <!-- voci sopra alle innertext -->
-                                                <thead>
-                                                    <tr>
-                                                        <th>carriage</th>
-                                                        <th>CP code</th>
-                                                        <th>Offer</th>
-                                                        <th>tiket price</th>
-                                                        <th>familiar</th>
-                                                    </tr>
-                                                </thead>
-                                                <!-- innertext nelle colonne del footer -->
-                                                <tbody>
-                                                    <tr>
-                                                        <!-- id  innertext -->
-                                                        <td id="tiket-user-spot">carrozza</td>
-                                                        <!-- id  innertext -->
-                                                        <td id="tiket-user-CP">codice CP</td>
-                                                        <!-- id  innertext -->
-                                                        <td id="tiket-user-offer">Offer</td>
-                                                        <!-- id  innertext -->
-                                                        <td id="tiket-user-price">Costo biglietto</td>
-                                                        <!-- id  innertext -->
-                                                        <td id="tiket-user-familiar">familiar</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                            <div class="position-relative mt-0">
+                                                <h4 id="tiket-user-id" class="text-uppercase fw-bold ">Passenger's Name
+                                                </h4>
+                                                <div id="familiar-icon" class="familiars position-absolute">
+                                                    <i id="add-icon"class="fa-solid fa-plus pe-2 d-none"> </i>
+                                                    <i id="owl-icon" class="fa-brands fa-earlybirds fs-2 d-none"></i>
+                                                    <i id="toad-icon" class="fa-solid fa-frog fs-2 d-none"></i>
+                                                    <i id="cat-icon" class="fa-solid fa-cat fs-2 d-none"></i>
+                                                    <i id="ferret-icon" class="fa-solid fa-otter fs-2 d-none"></i>
+                                                </div>
+                                            </div>
+
+                                            <div id="tiket-bottom" class="d-flex justify-content-between">
+                                                <div class="fw-bold d-flex">
+                                                    <div  class=" offer position-relative">Offer:</div>
+                                                    <div>
+                                                        <div id="tiket-adult-offer" class="small fw-light"></div>
+                                                        <div id="tiket-student-offer" class="small fw-light"></div>
+                                                        <div id="tiket-ancient-offer" class="small fw-light"></div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div id="tiketprice" class="fw-bold">
+                                                    tiket price:
+                                                    <div id="tiket-user-price" class="fw-ligh pt-3">Costo biglietto</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -292,7 +295,7 @@
             </div>
         </div>
     </section>
-
+    <img id="post-folder" class="position-relative d-none" src="img/letter-folder.png" alt=""> 
 
 
     <script src="scriptBONUS.js"></script>

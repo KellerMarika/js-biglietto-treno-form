@@ -4,6 +4,12 @@ body {
     cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
 }
 
+*,
+*:hover,
+*:focus {
+    cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
+}
+
 .my_imput {
     font-family: 'Homemade Apple', cursive;
     background-color: transparent;
@@ -16,11 +22,13 @@ body {
 .my_imput:active {
     background-color: transparent;
     border: none;
+
 }
 
 .my_btn {
     background-color: transparent;
-    border: 1px solid black;
+
+    border: none;
     border-radius: 30px;
     padding: 4px 16px;
     margin: 5px;
@@ -34,19 +42,30 @@ body {
 }
 
 .my_btn-small * {
-    border: 1px solid black;
     border-radius: 50%;
     padding: 4px 6px;
     display: inline-block;
     transition: all 0.2s;
+    border: 1px solid rgba(51, 45, 45, 0.856)
 }
 
 .my_btn:hover,
 .my_btn-small:hover *,
 .my-dropdown:hover * {
-    font-weight: bold;
-    border-width: 2px;
+    font-weight: bold
+    color: bisque;
+}
 
+.my_btn:hover,
+.my-dropdown:hover {
+    background-image: url(img/bgtext.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.my_btn-small:hover * {
+    background-color: #5c554aa4;
 }
 
 /* sfond0 *************************/
@@ -61,16 +80,16 @@ body {
 /**** BOOKING SECTION *************/
 
 #options-container {
-    padding: 50px;
-    padding-bottom: 20px;
+    padding: 20px 50px;
+
 }
 
 #main-container {
     margin-top: 22vh;
 }
 
-#main-container .row {
-    border-color: black;
+#booking-form {
+    margin-left: 50px;
 }
 
 #leviosa {
@@ -84,14 +103,6 @@ body {
 }
 
 /**** BOOKING SECTION *************/
-
-.tiket-name {
-    padding-top: 115px;
-    padding-bottom: 35px;
-}
-
-
-
 #familiar-select {
     border-bottom: 1px dashed black;
 }
@@ -100,35 +111,71 @@ body {
 
 #jumbotrone {
     padding-top: 70px;
-
 }
 
 /***** EFFETTI ************************/
 
 /* codice sconto */
-#btn-discount{
+#btn-discount {
     transition: all 1s
 }
-#leviosa-discount{
-    letter-spacing:0.2rem;
+
+#leviosa-discount {
+    letter-spacing: 0.2rem;
     transition: all 2s 1s;
     top: -60px;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
-.dropdown-arrow{
+.dropdown-arrow {
     transition: all .6s;
 }
 
-
-
-
-
 /* dropdown */
-.dropdown.transition{
-    transition: all 1s 1s;
+.dropdown.transition {
+    transition: all 1s .6s;
 }
-.drop-effect{
+
+.drop-effect {
     position: absolute;
     opacity: 0;
 }
 
+/* TIKET******************** */
+
+.tiket-content-col {
+    margin-top: 38px;
+}
+
+#tiket-user-id {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+#familiar-icon {
+    transform: translateY(-82px) translateX(280px);
+    margin: 0;
+    padding: 0;
+}
+
+#tiket-bottom {
+    padding-top: 10px;
+}
+
+#tiket-bottom .offer {
+    transform: translateX(-10px);
+}
+
+/* ************************** */
+
+
+#train-tiket {
+    transform: rotate(-10deg) translateX(-120px) translateY(10px);
+
+}
+
+#post-folder {
+    z-index: -1;
+    transform: scale(100%) translateX(700px) translateY(-60px) rotate(15deg);
+}

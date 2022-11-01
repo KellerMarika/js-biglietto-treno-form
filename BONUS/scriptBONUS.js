@@ -14,7 +14,6 @@ const userFamiliar_El = document.getElementById("user-familiar");// Elemento (se
 console.log(userFamiliar_El);
 
 
-
 /**** BOTTONI ***************/
 const btnTiketPrinter = document.getElementById("btn-tiket-printer");// Bottone stampa biglietto
 
@@ -31,6 +30,8 @@ const btnAddDiscount = document.getElementById("btn-add-discount");//bottone ins
 const bookingForm_El = document.getElementById("booking-form");//elemento paper booking + jambo
 
 const trainTiket_El = document.getElementById("train-tiket"); //Elemento biglietto
+
+const paperFolder_El =document.getElementById("post-folder");
 
 const discount_El = document.getElementById("leviosa-discount");//elemento a cui togllire visually-hidden al click di btnDiscount
 /* console.log(`${discount_El.innerHTML}`) */
@@ -350,12 +351,36 @@ btnTiketPrinter.addEventListener("click", function () {
     //    il prezzo x un adulto è uguale a price * numero adulti
     let adultPriceList = price * adultCounter
     console.log(`${adultPriceList}`);
-    //    il prezzo x uno studente è uguale all'80% di price (-20%)* numero studenti
-    let studentPriceList = (price * .8) * studentCounter
+
+
+    /* stampo sul biglietto */
+    const tiketAdultOffer_El=document.getElementById("tiket-adult-offer");
+    console.log(tiketAdultOffer_El);
+    tiketAdultOffer_El.innerHTML=`Adult x ${adultCounter}`
+
+  /*   tiketAdultOffer_El.innerHTML=`adulti x ${adultCounter}` */
+
+
+
+        //    il prezzo x uno studente è uguale all'80% di price (-20%)* numero studenti
+        let studentPriceList = (price * .8) * studentCounter
     console.log(`${studentPriceList}`);
+
+     /* stampo sul biglietto */
+    const tiketStudentOffer_El=document.getElementById("tiket-student-offer");
+    //console.log(tiketstudentOffer_El)
+    tiketStudentOffer_El.innerHTML=`student x ${studentCounter}`
+
+
     //    il prezzo x un anziano è uguale al 60% di price (-20%)* numero anziani
     let ancientPriceList = (price * .6) * ancientCounter
     console.log(`${ancientPriceList}`);
+
+     /* stampo sul biglietto */
+    const tiketAncientOffer_El=document.getElementById("tiket-ancient-offer");
+    //console.log(tiketancientOffer_El)
+    tiketAncientOffer_El.innerHTML=`ancient x ${ancientCounter}`
+
 
     const userPrice = `${((adultPriceList + studentPriceList + ancientPriceList).toFixed(2))} Gold-Galleons`;
     console.log(userPrice);//controllo somma
@@ -363,14 +388,14 @@ btnTiketPrinter.addEventListener("click", function () {
     const tiketUserPrice_El = document.getElementById("tiket-user-price");
     tiketUserPrice_El.innerHTML = userPrice
 
-/* tiket  offer= vi stampo(innerHTML) un valore differente in base alla fascia d'età dentro le if/else */
+    /* tiket  offer= vi stampo(innerHTML) un valore differente in base alla fascia d'età dentro le if/else */
 
 
-/* CAMBIO STRUTTURA */
-const tiketUserOffer_El = document.getElementById("tiket-user-offer");
-tiketUserOffer_El.innerHTML= `adult x ${adultCounter}
-student x ${studentCounter}
-ancient x ${ancientCounter}`
+    /* CAMBIO STRUTTURA */
+    /* const tiketUserOffer_El = document.getElementById("tiket-user-offer");
+    tiketUserOffer_El.innerHTML= `adult x ${adultCounter}
+    student x ${studentCounter}
+    ancient x ${ancientCounter}` */
 
     // tiket  carriage
     const tiketUserSpot_El = document.getElementById("tiket-user-spot");
@@ -381,14 +406,47 @@ ancient x ${ancientCounter}`
     tiketUserCp_El.innerHTML = Math.floor(Math.random() * 100000); //n intero max 99999
 
 
-    //tiket user familiar
+    /****** TIKET USER FAMILIAR ******************************/
     const userFamiliar = userFamiliar_El.value;
-    const tiketUserFamiliar_El = document.getElementById("tiket-user-familiar");
-    tiketUserFamiliar_El.innerHTML = userFamiliar;
+    console.log(userFamiliar);
+
+
+    //add-icon
+    const familiarAdd = document.getElementById("add-icon");
+    //owl-icon
+    const familiarOwl = document.getElementById("owl-icon");
+    //toad-icon
+    const familiarToad = document.getElementById("toad-icon");
+    //cat-icon
+    const familiarCat = document.getElementById("cat-icon");
+    //ferret-icon
+    const familiarFerret = document.getElementById("ferret-icon");
+
+    /* cambia icona accanto al nome a seconda dell'animale scelto in select */
+
+    if (userFamiliar === "owl") {
+        familiarOwl.classList.toggle('d-none');
+        familiarAdd.classList.toggle('d-none');
+
+    }
+    if (userFamiliar === "toad") {
+        familiarToad.classList.toggle('d-none');
+        familiarAdd.classList.toggle('d-none');
+    }
+    if (userFamiliar === "cat") {
+        familiarCat.classList.toggle('d-none');
+        familiarAdd.classList.toggle('d-none');
+    }
+    if (userFamiliar === "ferret") {
+        familiarFerret.classList.toggle('d-none');
+        familiarAdd.classList.toggle('d-none');
+    }
+
     /* TRAIN tiket */
     //non deve esserci mai la classe d-none
 
     trainTiket_El.classList.toggle("d-none", false);
+    paperFolder_El.classList.toggle("d-none", false);
     bookingForm_El.classList.toggle("d-none", true);
 
 });
