@@ -72,13 +72,13 @@
                                                     <label class="d-block pt-2 fs-5" for="user-travel-width">Km to
                                                         travel:</label>
                                                     <input id="user-travel-width" class=" my_imput" type="number"
-                                                        name="user-travel-width"  minlength="1">
+                                                        name="user-travel-width" minlength="1">
 
 
                                                     <!-- id const userBirthYear -->
-                                                    <div id="My_select" class="pb-2">
+                                                    <div id="My_select" class="pb-2 position-relative">
                                                         <div class="myy-select-label py-3 fs-5">Passengers:</div>
-                                                        <div class="option-container option_1">
+                                                        <div class="option-container select-option adult option_1">
                                                             <div class="d-flex ">
 
                                                                 <div class="flex-grow-1">
@@ -100,7 +100,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="option-container option_2">
+                                                        <div class="option-container select-option  dropdown student option_2 drop-effect transition">
                                                             <div class="d-flex">
 
                                                                 <div class=" flex-grow-1">
@@ -121,7 +121,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="option-container option_3">
+                                                        <div class="option-container  select-option dropdown ancient option_3 drop-effect transition">
                                                             <div class="d-flex">
 
                                                                 <div class="flex-grow-1">
@@ -129,7 +129,7 @@
                                                                 </div>
 
                                                                 <div class=" text-end">
-                                                                 
+
                                                                     <button class="my_btn-small btn-minus  btn-plus">
                                                                         <i class="fa-solid fa-minus"></i>
                                                                     </button>
@@ -149,16 +149,8 @@
                                                         <!-- hide -->
                                                         <div class="text-center">
                                                             <!-- add event listner click : qualdo  nel div dentro al bottone il valore è === other age groups" allora sostituiscilo con innerHTML icona + hide e togli d-none a : student e ancient-->
-                                                            <button id="age-dropdown" class=" my-dropdown">
-                                                                <div> <i class="fa-solid fa-chevron-down"></i>other age
-                                                                    groups
-                                                                </div>
-                                                                <!-- innerHTML -->
-
-                                                                <!-- add event listner click : qualdo  nel div dentro al bottone il valore è === "icona + hide" allora sostituiscilo con innerHTML "icona + other age
-                                                                groups" e aggiungi classe d-none a : student e ancient -->
-                                                                <div><i class="fa-solid fa-chevron-up"></i>hide </div>
-                                                            </button>
+                                                            <input class="bg-transparent border-0 p-3" type="button" value="other age groups"
+                                                                id="btn-age-dropdown"> <span class=""><i class=" dropdown-arrow fa-solid fa-chevron-down"></i></span>
                                                         </div>
 
 
@@ -168,7 +160,7 @@
                                                             </label>
 
 
-                                                            <select name="user-age" id="user-age"
+                                                            <select name="user-familiar" id="user-age"
                                                                 class="my_imput border-0 w-auto ">
                                                                 <option value="" selected></option>
                                                                 <option value="owl">Owl</option>
@@ -181,10 +173,12 @@
                                                         <!-- codice sconto bunner -->
                                                         <!-- al clic si ape un prompt dove caricare il codice del bunner leviosa -->
 
-                                                        <input type="button" id="btn-add-discount" class="small my_btn mt-3" value=" aggiungi un codice sconto">
-                                                     
-                                                     
-                                                    
+                                                        <input type="button" id="btn-add-discount"
+                                                            class="small my_btn mt-3"
+                                                            value=" aggiungi un codice sconto">
+
+
+
 
 
                                                         <div class="d-flex justify-content-between">
@@ -210,11 +204,12 @@
 
                                                 <div id="leviosa" class="bunner text-center">
                                                     <h2>get discount:</h2>
-                                                    <button id="btn-get-discount"class="my_btn"> click for discount </button>
+                                                    <button id="btn-get-discount" class="my_btn p-2"> click for discount
+                                                    </button>
                                                     <!-- appare e scompare con effetto dissolvenza (tipo mappa del malandrino) -->
                                                     <div id="leviosa-discount" class=" position-relative mt-4 fw-bold opacity-0 fs-5
                                                     ">IT'S-LEVIOSA-NOT-LEVIOSAAA</div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -298,7 +293,7 @@
             </div>
 
             <div class=" text-end">
-             
+
                 <button id="minus" class="my_btn-small btn-minus  btn-plus">
                     <i class="fa-solid fa-minus"></i>
                 </button>

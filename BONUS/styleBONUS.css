@@ -105,6 +105,7 @@ body {
 
 /***** EFFETTI ************************/
 
+/* codice sconto */
 #btn-discount{
     transition: all 1s
 }
@@ -112,4 +113,21 @@ body {
     letter-spacing:0.2rem;
     transition: all 2s 1s;
     top: -60px;
+}
+
+.dropdown-arrow{
+    transition: all .6s;
+}
+
+
+
+
+
+/* dropdown */
+.dropdown.transition{
+    transition: all 1s 1s;
+}
+.drop-effect{
+    position: absolute;
+    opacity: 0;
 }

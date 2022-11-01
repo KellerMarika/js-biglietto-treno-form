@@ -21,7 +21,7 @@ const btnCancel = document.getElementById("cancel"); //Bottone annulla
 const btnGetDiscount = document.getElementById("btn-get-discount");//bottone rivela sconto
 
 const btnAddDiscount = document.getElementById("btn-add-discount");//bottone inser sconto
-console.log(btnAddDiscount);
+//console.log(btnAddDiscount);
 
 
 
@@ -36,23 +36,79 @@ const discount_El = document.getElementById("leviosa-discount");//elemento a cui
 
 
 
-/*  struttura più e meno */
-//riflessione: se faccio un query selector all e prendo tutti i btnminus, non avrò una corrispondenza univoca ma generalizzata su tutti i contatori di span.
-//non voglio dare un id per richiamarli tutti
-//potrei ridefinire le variabili di selezione nella funzione specificando il percorso di span e btn
+/**** SELECT OPTION **********************/
+//Select Option Ancient 
+const selectOptionAncient = document.querySelector(".select-option.ancient");
+//console.log(selectOptionAncient.innerHTML);
 
-/* let btnMinus_El = document.querySelectorAll("btn-minus");
-console.log(btnMinus_El);
+//Select Option Student 
+const selectOptionStudent = document.querySelector(".select-option.student");
+//console.log(selectOptionStudent.innerHTML);
 
-let btnPlus_El = document.querySelectorAll("btn-plus");
-console.log(btnPlus_El);
- */
-const btnPlus = document.getElementById("plus");
-const btnMinus = document.getElementById("minus");
-console.log(btnPlus, btnMinus);
 
-let contatoreClik = 0;
-console.log(contatoreClik);
+/**** SELECT DROPDOWN ******/
+//bottone dropdown selectOptionAncient e selectOptionStudent 
+const btnAgeDropdown = document.getElementById("btn-age-dropdown");
+//console.log(btnAgeDropdown.value);//controllo valore
+
+btnAgeDropdown.addEventListener("click", function () {
+    // console.log(btnAgeDropdown.value);
+
+    //tutte le volte che clicco la dropdownArrow deve ruotare
+    const dropdownArrow = document.querySelector(".dropdown-arrow");
+    console.log(dropdownArrow);
+
+    /* scopriamo come funziona il query selector all (array ?) */
+    const selectOptionDropdown = document.querySelectorAll(".select-option.dropdown");
+    console.log(selectOptionDropdown);
+
+    /* per ogni elemento di selectoptiondropdown nella class list
+    se è presente la classe "drop-effect" toglila altrimenti mettila */
+    selectOptionDropdown.forEach((el) => {
+        el.classList.toggle('drop-effect');
+    });
+
+    // se il valore del bottone è === other age group
+    if (btnAgeDropdown.value === `other age groups`) {
+        // riassegno il valore = hide
+        btnAgeDropdown.value = " hide "
+        //console.log(btnAgeDropdown.value);
+        //e lo scrivo all'interno del bottone 
+        btnAgeDropdown.innerHTML = btnAgeDropdown.value
+
+        //rotazione verso l'alto della freccia
+        dropdownArrow.style.transform = "rotate(180deg)"
+
+
+        /* fixa il problema della transizione inversa */
+        selectOptionDropdown.forEach((el) => {
+            el.classList.add('transition');
+        });
+
+
+
+        //altrimenti 
+    } else {
+        // riassegno il valore = other age groups
+        btnAgeDropdown.value = "other age groups"
+        // console.log(btnAgeDropdown.value);
+        //e lo scrivo all'interno del bottone 
+        btnAgeDropdown.innerHTML = btnAgeDropdown.value
+
+        //rotazione verso l'alto della freccia
+        dropdownArrow.style.transform = "rotate(360deg)"
+
+        /* fixa il problema della transizione inversa */
+        selectOptionDropdown.forEach((el) => {
+            el.classList.remove('transition');
+        });
+
+    }
+});
+
+
+
+
 
 
 /* quando clicco il bottone get discount */
@@ -80,7 +136,7 @@ btnAddDiscount.addEventListener("click", function () {
         alert("YOU GAIN 50% DISCOUNT!");
 
         /* E POI FACCIO UNO SCONTO SUL TOTALE _________________________ */
-//________________________________________________ULTIMA OPERAZIONE DA FARE
+        //________________________________________________ULTIMA OPERAZIONE DA FARE
 
 
 
@@ -94,7 +150,24 @@ btnAddDiscount.addEventListener("click", function () {
 /* quando clicco il bottone add-discount */
 
 
+/*  struttura più e meno */
+//riflessione: se faccio un query selector all e prendo tutti i btnminus, non avrò una corrispondenza univoca ma generalizzata su tutti i contatori di span.
+//non voglio dare un id per richiamarli tutti
+//potrei ridefinire le variabili di selezione nella funzione specificando il percorso di span e btn
+
+/* let btnMinus_El = document.querySelectorAll("btn-minus");
+console.log(btnMinus_El);
+
+let btnPlus_El = document.querySelectorAll("btn-plus");
+console.log(btnPlus_El);
+ */
+/* const btnPlus = document.getElementById("plus");
+const btnMinus = document.getElementById("minus");
+console.log(btnPlus, btnMinus);
+
+let contatoreClik = 0;
+console.log(contatoreClik);
 
 
 
-
+ */
