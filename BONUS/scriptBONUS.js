@@ -46,10 +46,12 @@ const selectOptionStudent = document.querySelector(".select-option.student");
 //console.log(selectOptionStudent.innerHTML);
 
 
-/**** SELECT DROPDOWN ******/
+/**** SELECT DROPDOWN *****************************/
 //bottone dropdown selectOptionAncient e selectOptionStudent 
 const btnAgeDropdown = document.getElementById("btn-age-dropdown");
 //console.log(btnAgeDropdown.value);//controllo valore
+
+/* FUNZIONE DROPDOWN */
 
 btnAgeDropdown.addEventListener("click", function () {
     // console.log(btnAgeDropdown.value);
@@ -62,13 +64,14 @@ btnAgeDropdown.addEventListener("click", function () {
     const selectOptionDropdown = document.querySelectorAll(".select-option.dropdown");
     console.log(selectOptionDropdown);
 
+    //effetto svanimento
     /* per ogni elemento di selectoptiondropdown nella class list
     se è presente la classe "drop-effect" toglila altrimenti mettila */
     selectOptionDropdown.forEach((el) => {
         el.classList.toggle('drop-effect');
     });
 
-    // se il valore del bottone è === other age group
+    // SE il valore del bottone è === other age group
     if (btnAgeDropdown.value === `other age groups`) {
         // riassegno il valore = hide
         btnAgeDropdown.value = " hide "
@@ -80,12 +83,10 @@ btnAgeDropdown.addEventListener("click", function () {
         dropdownArrow.style.transform = "rotate(180deg)"
 
 
-        /* fixa il problema della transizione inversa */
+        /* reset dopo averlo tolto in else (toggle funzionava male) */
         selectOptionDropdown.forEach((el) => {
             el.classList.add('transition');
         });
-
-
 
         //altrimenti 
     } else {
@@ -98,11 +99,10 @@ btnAgeDropdown.addEventListener("click", function () {
         //rotazione verso l'alto della freccia
         dropdownArrow.style.transform = "rotate(360deg)"
 
-        /* fixa il problema della transizione inversa */
+        /* fixa il problema della transizione inversa (toggle funzionava male) */
         selectOptionDropdown.forEach((el) => {
             el.classList.remove('transition');
         });
-
     }
 });
 
@@ -111,16 +111,20 @@ btnAgeDropdown.addEventListener("click", function () {
 
 
 
+
+/* FUNZIONE GET DISCOUNT ***********/
 /* quando clicco il bottone get discount */
 btnGetDiscount.addEventListener("click", function () {
 
     console.log(`${discount_El}${discount_El.className}`);//controllo classi disponibili da discount_El
-    discount_El.classList.remove("opacity-0");//rrendo visobile 
-    btnGetDiscount.classList.add("opacity-0");
+    discount_El.classList.remove("opacity-0");//rendo visobile 
+    btnGetDiscount.classList.add("opacity-0");//rendo invisibile
 });
 
 
-/* creo una variabile di sconto 50% sul totale da applicare se nel prompt aperto con button add discount inseriamo il testo di discount_El */
+
+/* FUNZIONE ADD DISCOUNT ***********/
+/* creo una variabile di sconto 50% sul totale. Da applicare solo se nel prompt aperto con buttonadddiscount inseriamo il testo di discount_El */
 
 
 /* quando clicco il bottone add discount */
@@ -138,16 +142,14 @@ btnAddDiscount.addEventListener("click", function () {
         /* E POI FACCIO UNO SCONTO SUL TOTALE _________________________ */
         //________________________________________________ULTIMA OPERAZIONE DA FARE
 
-
-
     } else {
         //altrimenti lo insulto
         alert("muggle, get out of here!");
     }
-})
+});
 
 
-/* quando clicco il bottone add-discount */
+
 
 
 /*  struttura più e meno */
