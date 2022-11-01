@@ -31,7 +31,7 @@ const bookingForm_El = document.getElementById("booking-form");//elemento paper 
 
 const trainTiket_El = document.getElementById("train-tiket"); //Elemento biglietto
 
-const paperFolder_El =document.getElementById("post-folder");
+const paperFolder_El = document.getElementById("post-folder");
 
 const discount_El = document.getElementById("leviosa-discount");//elemento a cui togllire visually-hidden al click di btnDiscount
 /* console.log(`${discount_El.innerHTML}`) */
@@ -135,11 +135,14 @@ btnAddDiscount.addEventListener("click", function () {
     if (discount50 === discount_El.innerHTML) {
         //lancio un alert di sconto 50 all'utente
         alert("YOU GAIN 50% DISCOUNT!");
+
+        /* devo mettere nella funzione di stampa tiket  che se discount50=true allora devo fare tiket-price/2  ma non so come tirare fuori sto **** di dato */
         discount50 = true;
         console.log(discount50);
     } else {
         //altrimenti lo insulto
         alert("muggle, get out of here!");
+        
         discount50 = false;
         console.log(discount50);
     }
@@ -354,32 +357,32 @@ btnTiketPrinter.addEventListener("click", function () {
 
 
     /* stampo sul biglietto */
-    const tiketAdultOffer_El=document.getElementById("tiket-adult-offer");
+    const tiketAdultOffer_El = document.getElementById("tiket-adult-offer");
     console.log(tiketAdultOffer_El);
-    tiketAdultOffer_El.innerHTML=`Adult x ${adultCounter}`
+    tiketAdultOffer_El.innerHTML = `Adult x ${adultCounter}`
 
-  /*   tiketAdultOffer_El.innerHTML=`adulti x ${adultCounter}` */
+    /*   tiketAdultOffer_El.innerHTML=`adulti x ${adultCounter}` */
 
 
 
-        //    il prezzo x uno studente è uguale all'80% di price (-20%)* numero studenti
-        let studentPriceList = (price * .8) * studentCounter
+    //    il prezzo x uno studente è uguale all'80% di price (-20%)* numero studenti
+    let studentPriceList = (price * .8) * studentCounter
     console.log(`${studentPriceList}`);
 
-     /* stampo sul biglietto */
-    const tiketStudentOffer_El=document.getElementById("tiket-student-offer");
+    /* stampo sul biglietto */
+    const tiketStudentOffer_El = document.getElementById("tiket-student-offer");
     //console.log(tiketstudentOffer_El)
-    tiketStudentOffer_El.innerHTML=`student x ${studentCounter}`
+    tiketStudentOffer_El.innerHTML = `student x ${studentCounter}`
 
 
     //    il prezzo x un anziano è uguale al 60% di price (-20%)* numero anziani
     let ancientPriceList = (price * .6) * ancientCounter
     console.log(`${ancientPriceList}`);
 
-     /* stampo sul biglietto */
-    const tiketAncientOffer_El=document.getElementById("tiket-ancient-offer");
+    /* stampo sul biglietto */
+    const tiketAncientOffer_El = document.getElementById("tiket-ancient-offer");
     //console.log(tiketancientOffer_El)
-    tiketAncientOffer_El.innerHTML=`ancient x ${ancientCounter}`
+    tiketAncientOffer_El.innerHTML = `ancient x ${ancientCounter}`
 
 
     const userPrice = `${((adultPriceList + studentPriceList + ancientPriceList).toFixed(2))} Gold-Galleons`;
