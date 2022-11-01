@@ -55,144 +55,151 @@
 
                                         <!-- ******** BOOKING SECTION ********************************* -->
                                         <div class="col-5">
+                                            <!-- 
+                                            <form action="get"  >
+                                                <fieldset> -->
+                                            <!-- legenda -->
+                                            <legend class="fs-3 fw-bold">Book train Tiket</legend>
 
-                                            <form action="get">
-                                                <fieldset>
-                                                    <!-- legenda -->
-                                                    <legend class="fs-3 fw-bold">Book train Tiket</legend>
-
-                                                    <!-- id const userId -->
-                                                    <label class="d-block fs-5" for="user-id">wizard/witch Name:
-                                                    </label>
-                                                    <input id="user-id" class=" my_imput" type="text" name="user-id"
-                                                        minlength="2">
-
-
-                                                    <!-- id const userTravelWidth -->
-                                                    <label class="d-block pt-2 fs-5" for="user-travel-width">Km to
-                                                        travel:</label>
-                                                    <input id="user-travel-width" class=" my_imput" type="number"
-                                                        name="user-travel-width" minlength="1">
+                                            <!-- id const userId -->
+                                            <label class="d-block fs-5" for="user-id">wizard/witch Name:
+                                            </label>
+                                            <input id="user-id" class=" my_imput" type="text" name="user-id"
+                                                minlength="2">
 
 
-                                                    <!-- id const userBirthYear -->
-                                                    <div id="My_select" class="pb-2 position-relative">
-                                                        <div class="myy-select-label py-3 fs-5">Passengers:</div>
-                                                        <div class="option-container select-option adult option_1">
-                                                            <div class="d-flex ">
+                                            <!-- id const userTravelWidth -->
+                                            <label class="d-block pt-2 fs-5" for="user-travel-width">Km to
+                                                travel:</label>
+                                            <input id="user-travel-width" class=" my_imput" type="number"
+                                                name="user-travel-width" minlength="1">
 
-                                                                <div class="flex-grow-1">
-                                                                    <span class="">Adult</span>
-                                                                </div>
-                                                                <!-- 2 contantori su btn + e btn - che al click incrementano o decrementano il valore dello span centrale. 
+
+                                            <!-- id const userBirthYear -->
+                                            <div id="My_select" class="pb-2 position-relative">
+                                                <div class="myy-select-label py-3 fs-5">Passengers:</div>
+                                                <div class="option-container select-option adult option_1">
+                                                    <div class="d-flex ">
+
+                                                        <div class="flex-grow-1">
+                                                            <span class="">Adult</span>
+                                                        </div>
+                                                        <!-- 2 contantori su btn + e btn - che al click incrementano o decrementano il valore dello span centrale. 
                                                             una volta cliccato il bottone input generate, il valore aggiornato nello span viene moltiplicato per il prezzo del biglietto relativo alla fascia d'età -->
-                                                                <div class="col text-end">
-                                                                    <button class="my_btn-small btn-minus ">
-                                                                        <i class="fa-solid fa-minus"></i>
-                                                                    </button>
+                                                        <div id="adult" class="col text-end">
 
-                                                                    <span class="contatore"> </span>
+                                                            <button value="" class="my_btn-small btn-minus adult ">
 
-                                                                    <button class=" my_btn-small btn-plus ">
-                                                                        <i class="fa-solid fa-plus"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                                <i class="fa-solid fa-minus"></i>
+                                                            </button>
 
-                                                        <div class="option-container select-option  dropdown student option_2 drop-effect transition">
-                                                            <div class="d-flex">
+                                                            <span class="counter adult"> 0 </span>
 
-                                                                <div class=" flex-grow-1">
-                                                                    <span class="">student (11-17)</span>
-                                                                </div>
+                                                            <button class=" my_btn-small  btn-plus adult ">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </button>
 
-                                                                <div class=" text-end">
-                                                                    <button class="my_btn-small btn-minus ">
-                                                                        <i class="fa-solid fa-minus"></i>
-                                                                    </button>
-
-                                                                    <span class="contatore"> </span>
-
-                                                                    <button class=" my_btn-small btn-plus ">
-                                                                        <i class="fa-solid fa-plus"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="option-container  select-option dropdown ancient option_3 drop-effect transition">
-                                                            <div class="d-flex">
-
-                                                                <div class="flex-grow-1">
-                                                                    <span class="">Ancient (>120)</span>
-                                                                </div>
-
-                                                                <div class=" text-end">
-
-                                                                    <button class="my_btn-small btn-minus  btn-plus">
-                                                                        <i class="fa-solid fa-minus"></i>
-                                                                    </button>
-
-                                                                    <span class="contatore"> </span>
-
-                                                                    <button class=" my_btn-small ">
-                                                                        <i class="fa-solid fa-plus"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
+                                                </div>
 
+                                                <div
+                                                    class="option-container select-option  dropdown student option_2 drop-effect transition">
+                                                    <div class="d-flex">
 
-                                                    <div id="booking-footer">
-                                                        <!-- hide -->
-                                                        <div class="text-center">
-                                                            <!-- add event listner click : qualdo  nel div dentro al bottone il valore è === other age groups" allora sostituiscilo con innerHTML icona + hide e togli d-none a : student e ancient-->
-                                                            <input class="bg-transparent border-0 p-3" type="button" value="other age groups"
-                                                                id="btn-age-dropdown"> <span class=""><i class=" dropdown-arrow fa-solid fa-chevron-down"></i></span>
+                                                        <div class=" flex-grow-1">
+                                                            <span class="">student (11-17)</span>
                                                         </div>
 
+                                                        <div id="student" class=" text-end">
+                                                            <button class="my_btn-small btn-minus student ">
+                                                                <i class="fa-solid fa-minus"></i>
+                                                            </button>
 
-                                                        <div id="familiar-select"
-                                                            class="d-flex justify-content-between align-items-end">
-                                                            <label class="flex-grow-1" for="user-age">Add a familiar
-                                                            </label>
+                                                            <span class="counter student"> 0 </span>
 
-
-                                                            <select name="user-familiar" id="user-age"
-                                                                class="my_imput border-0 w-auto ">
-                                                                <option value="" selected></option>
-                                                                <option value="owl">Owl</option>
-                                                                <option value="toad">Toad</option>
-                                                                <option value="rat">Rat</option>
-                                                                <option value="ferret">Ferret</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <!-- codice sconto bunner -->
-                                                        <!-- al clic si ape un prompt dove caricare il codice del bunner leviosa -->
-
-                                                        <input type="button" id="btn-add-discount"
-                                                            class="small my_btn mt-3"
-                                                            value=" aggiungi un codice sconto">
-
-
-
-
-
-                                                        <div class="d-flex justify-content-between">
-                                                            <!-- eventlistner click replace class to tiket  eventlistner click valori tabella  =const -->
-                                                            <input type="button" class="my_btn" value="Generate"
-                                                                id="btn-tiket-printer">
-
-                                                            <!-- id button btnCancel  eventlistner click replace class to tiket  eventlistner click valore user.ecc,ecc ="" -->
-                                                            <input type="button" class="my_btn" value="Cancel"
-                                                                id="cancel">
+                                                            <button class=" my_btn-small  btn-plus student ">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </button>
                                                         </div>
                                                     </div>
-                                                </fieldset>
-                                            </form>
+                                                </div>
+
+                                                <div
+                                                    class="option-container  select-option dropdown ancient option_3 drop-effect transition">
+                                                    <div class="d-flex">
+
+                                                        <div class="flex-grow-1">
+                                                            <span class="">Ancient (>120)</span>
+                                                        </div>
+
+                                                        <div id="ancient" class=" text-end">
+
+                                                            <button class="my_btn-small btn-minus ancient ">
+                                                                <i class="fa-solid fa-minus"></i>
+                                                            </button>
+
+                                                            <span class="counter ancient"> 0 </span>
+
+                                                            <button class=" my_btn-small  btn-plus ancient ">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div id="booking-footer">
+                                                <!-- hide -->
+                                                <div class="text-center">
+                                                    <!-- add event listner click : qualdo  nel div dentro al bottone il valore è === other age groups" allora sostituiscilo con innerHTML icona + hide e togli d-none a : student e ancient-->
+                                                    <input class="bg-transparent border-0 p-3" type="button"
+                                                        value="other age groups" id="btn-age-dropdown"> <span
+                                                        class=""><i
+                                                            class=" dropdown-arrow fa-solid fa-chevron-down"></i></span>
+                                                </div>
+
+
+                                                <div id="familiar-select"
+                                                    class="d-flex justify-content-between align-items-end">
+                                                    <label class="flex-grow-1" for="user-familiar">Add a
+                                                        familiar
+                                                    </label>
+
+
+                                                    <select name="user-familiar" id="user-familiar"
+                                                        class="my_imput border-0 w-auto ">
+                                                        <option value="" selected></option>
+                                                        <option value="owl">Owl</option>
+                                                        <option value="toad">Toad</option>
+                                                        <option value="rat">Rat</option>
+                                                        <option value="ferret">Ferret</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- codice sconto bunner -->
+                                                <!-- al clic si ape un prompt dove caricare il codice del bunner leviosa -->
+
+                                                <input type="button" id="btn-add-discount" class="small my_btn mt-3"
+                                                    value=" aggiungi un codice sconto">
+
+
+
+
+
+                                                <div class="d-flex justify-content-between">
+                                                    <!-- eventlistner click replace class to tiket  eventlistner click valori tabella  =const -->
+                                                    <input type="button" class="my_btn" value="Generate"
+                                                        id="btn-tiket-printer">
+
+                                                    <!-- id button btnCancel  eventlistner click replace class to tiket  eventlistner click valore user.ecc,ecc ="" -->
+                                                    <input type="button" class="my_btn" value="Cancel" id="cancel">
+                                                </div>
+                                            </div>
+                                            <!--       </fieldset>
+                                            </form> -->
                                         </div>
 
                                         <!--    ************** JUMBOTRONE ************************* -->
@@ -281,31 +288,8 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
-
-    <div class="container option-container option_3 bg-light">
-        <div class="d-flex">
-
-            <div class="flex-grow-1">
-                <span class="">Ancient (>120)</span>
-            </div>
-
-            <div class=" text-end">
-
-                <button id="minus" class="my_btn-small btn-minus  btn-plus">
-                    <i class="fa-solid fa-minus"></i>
-                </button>
-
-                <span class="contatore"> </span>
-
-                <button id="plus" class=" my_btn-small ">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
-        </div>
-    </div>
 
 
     <script src="scriptBONUS.js"></script>

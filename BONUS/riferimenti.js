@@ -21,27 +21,27 @@ const trainTiket_El = document.getElementById("train-tiket"); */ //Elemento bigl
 
 /* INIZIO FUNZIONE  CANCEL****************************************************/
 //la scrivo prima, così il valore dei userId, userTravelWidth, userAge non sono ancora modificati nella funzione successiva
-btnCancel.addEventListener("click", function () {
-
+/* btnCancel.addEventListener("click", function () {
+ */
     /* TRAIN tiket */
     //deve sempre esserci mai la classe d-none
-    trainTiket_El.classList.toggle("d-none", true);
+/*     trainTiket_El.classList.toggle("d-none", true); */
 
 
     /* reset UserId_Element **********/
 
-    console.log("userId_El", userId_El, userId_El.value)
-    userId_El.value = "";
+/*     console.log("userId_El", userId_El, userId_El.value)
+    userId_El.value = ""; */
 
     /* reset UserTravelWidth_Element *************************/
-    console.log("userTravelWidth_El", userTravelWidth_El, userTravelWidth_El.value)
-    userTravelWidth_El.value = "";
+ /*    console.log("userTravelWidth_El", userTravelWidth_El, userTravelWidth_El.value)
+    userTravelWidth_El.value = ""; */
 
     /* reset UserAge_Element **********/
-    console.log("userAge_El", userAge_El, userAge_El.value)
+/*     console.log("userAge_El", userAge_El, userAge_El.value)
     userAge_El.value = "disc0"
 });
-
+ */
 
 
 

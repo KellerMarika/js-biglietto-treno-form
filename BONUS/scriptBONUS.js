@@ -10,7 +10,9 @@ const userId_El = document.getElementById("user-id"); //  Elemento  (input text)
 
 const userTravelWidth_El = document.getElementById("user-travel-width"); // Elemento ( input number)  user Km
 
-/* const userAge_El = document.getElementById("user-age");// Elemento (select) user Age */
+const userFamiliar_El = document.getElementById("user-familiar");// Elemento (select) user familiar */
+console.log(userFamiliar_El);
+
 
 
 /**** BOTTONI ***************/
@@ -149,27 +151,121 @@ btnAddDiscount.addEventListener("click", function () {
 });
 
 
+/**** AGE COUNTER ***************************************************/
+
+/* intanto facciamolo nel piccolo */
+/****** ADULT **************************/
+
+const adultMinus = document.querySelector(".btn-minus.adult");//MENO
+const adultPlus = document.querySelector(".btn-plus.adult");//PIU'
+const adultCounter_El = document.querySelector(".counter.adult")//counter */
+let adultCounter = 0;  //counter valore */
+
+console.log(`${adultMinus} 
+${adultPlus}
+${adultCounter} 
+${adultCounter_El}`);
 
 
+/* FUNZIONE MINUS */
+adultMinus.addEventListener("click", function () {
+    //quando clicco sottraggo "1" e lo stampo in contantore_El
+    adultCounter -= 1
+    adultCounter_El.innerHTML = adultCounter
+});
 
-/*  struttura più e meno */
-//riflessione: se faccio un query selector all e prendo tutti i btnminus, non avrò una corrispondenza univoca ma generalizzata su tutti i contatori di span.
-//non voglio dare un id per richiamarli tutti
-//potrei ridefinire le variabili di selezione nella funzione specificando il percorso di span e btn
+/* quando clicco aggiungo "1"  */
+adultPlus.addEventListener("click", function () {
 
-/* let btnMinus_El = document.querySelectorAll("btn-minus");
-console.log(btnMinus_El);
+    adultCounter += 1
+    adultCounter_El.innerHTML = adultCounter
+});
 
-let btnPlus_El = document.querySelectorAll("btn-plus");
-console.log(btnPlus_El);
- */
-/* const btnPlus = document.getElementById("plus");
-const btnMinus = document.getElementById("minus");
-console.log(btnPlus, btnMinus);
+/**** STUDENT ********************************/
 
-let contatoreClik = 0;
-console.log(contatoreClik);
+const studentMinus = document.querySelector(".btn-minus.student");//MENO
+const studentPlus = document.querySelector(".btn-plus.student");//PIU'
+const studentCounter_El = document.querySelector(".counter.student")//counter */
+let studentCounter = 0;  //counter valore */
+
+console.log(`${studentMinus} 
+${studentPlus}
+${studentCounter} 
+${studentCounter_El}`);
 
 
+/* FUNZIONE MINUS */
+studentMinus.addEventListener("click", function () {
+    //quando clicco sottraggo "1" e lo stampo in contantore_El
+    studentCounter -= 1
+    studentCounter_El.innerHTML = studentCounter
+});
 
- */
+/* quando clicco aggiungo "1"  */
+studentPlus.addEventListener("click", function () {
+
+    studentCounter += 1
+    studentCounter_El.innerHTML = studentCounter
+});
+
+/***** ANCIENT *************************/
+
+const ancientMinus = document.querySelector(".btn-minus.ancient");//MENO
+const ancientPlus = document.querySelector(".btn-plus.ancient");//PIU'
+const ancientCounter_El = document.querySelector(".counter.ancient")//counter */
+let ancientCounter = 0;  //counter valore */
+
+console.log(`${ancientMinus} 
+${ancientPlus}
+${ancientCounter} 
+${ancientCounter_El}`);
+
+
+/* FUNZIONE MINUS */
+ancientMinus.addEventListener("click", function () {
+    //quando clicco sottraggo "1" e lo stampo in contantore_El
+    ancientCounter -= 1
+    ancientCounter_El.innerHTML = ancientCounter
+});
+
+/* quando clicco aggiungo "1"  */
+ancientPlus.addEventListener("click", function () {
+
+    ancientCounter += 1
+    ancientCounter_El.innerHTML = ancientCounter
+});
+
+
+/* INIZIO FUNZIONE  CANCEL****************************************************/
+//la scrivo prima, così il valore dei userId, userTravelWidth, userAge non sono ancora modificati nella funzione successiva
+btnCancel.addEventListener("click", function () {
+
+    /* TRAIN tiket */
+    //deve sempre esserci mai la classe d-none
+    trainTiket_El.classList.toggle("d-none", true);
+
+
+    /* reset UserId_Element **********/
+
+    console.log("userId_El", userId_El, userId_El.value);
+    userId_El.value = "";
+
+    /* reset UserTravelWidth_Element *************************/
+    console.log("userTravelWidth_El", userTravelWidth_El, userTravelWidth_El.value);
+    userTravelWidth_El.value = "";
+
+    /* reset UserAge_Element **********/
+
+    console.log("userFamiliar_El", userFamiliar_El, userFamiliar_El.value);
+    userFamiliar_El.value = ""
+
+    /* RESET AGE COUNTER */
+
+    adultCounter = 0
+    adultCounter_El.innerHTML = adultCounter
+    studentCounter = 0
+    studentCounter_El.innerHTML = studentCounter
+    ancientCounter = 0
+    ancientCounter_El.innerHTML = ancientCounter
+});
+
