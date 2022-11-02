@@ -16,6 +16,8 @@ body {
     border: none;
     border-bottom: 1px dashed black;
     width: 75%;
+    color: #a13b48;
+    font-weight: bold;
 }
 
 .my_imput:focus,
@@ -53,7 +55,7 @@ body {
 .my_btn-small:hover *,
 .my-dropdown:hover * {
     font-weight: bold;
-    color: bisque;
+    color: rgb(230, 203, 170);
 }
 
 .my_btn:hover,
@@ -65,9 +67,11 @@ body {
 }
 
 .my_btn-small:hover * {
-    background-color: #5c554aa4;
+    background-color: #863842d2;
 }
-
+.my_btn-small:active * {
+    background-color: #6b3038d2;
+}
 /* sfond0 *************************/
 .my-magic-bg {
     background-image: url(img/BG-HOGWARTS.png);
@@ -81,11 +85,11 @@ body {
 
 #options-container {
     padding: 20px 50px;
-
 }
 
 #main-container {
     margin-top: 22vh;
+    margin-left: 250px;
 }
 
 #booking-form {
@@ -110,7 +114,15 @@ body {
 /****JUMBOTRONE ****************/
 
 #jumbotrone {
-    padding-top: 70px;
+    padding-top: 20px;
+}
+#logo{
+    width: 120%;
+    margin-top: 20px;
+    margin-left: -50px;
+    opacity: 70%;
+    padding-bottom: 20px;
+
 }
 
 /***** EFFETTI ************************/
@@ -124,8 +136,9 @@ body {
     letter-spacing: 0.2rem;
     transition: all 2s 1s;
     top: -60px;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -30px;
+    margin-right: -30px;
+
 }
 
 .dropdown-arrow {

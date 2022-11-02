@@ -123,6 +123,10 @@ btnGetDiscount.addEventListener("click", function () {
 /* FUNZIONE ADD DISCOUNT ***********/
 /* creo una variabile di sconto 50% sul totale. Da applicare solo se nel prompt aperto con buttonadddiscount inseriamo il testo di discount_El */
 
+//attraverso la seguente funzione modifico le classi di questo elemento. 
+//sucessivamente, potrò recuperare il dato di questa funzione ed utilizzarlo in un'altra attraverso l'indagine che farò sulle classi modificate in precedenza.
+const discount50Marker = document.getElementById("discount-50-marker");
+console.log(discount50Marker, discount50Marker.classList);
 
 /* quando clicco il bottone add discount */
 btnAddDiscount.addEventListener("click", function () {
@@ -132,24 +136,38 @@ btnAddDiscount.addEventListener("click", function () {
     console.log(` discount50 = ${discount50}  
     discount_El-innerHTML = ${discount_El.innerHTML}`);//controllo valore
     //SE il dato inserito nel prompt dall'utente equivale al contenuto di discount_el
+
+
+    /* devo mettere nella funzione di stampa tiket  che se discount50=true allora devo fare tiket-price/2 */
+
+    /* ESCAMOTAGE!
+    non so come estrarre il dato dalla funzione ma con essa posso modificare l'HTML
+    lascio un segno nell'html (aggiungo un'icona con classe d-none */
+
+    /*  const discount50Marker = document.getElementById("discount-50-marker");
+     console.log(discount50Marker, discount50Marker.classList); */
+
+
+
+
     if (discount50 === discount_El.innerHTML) {
         //lancio un alert di sconto 50 all'utente
         alert("YOU GAIN 50% DISCOUNT!");
 
-        /* devo mettere nella funzione di stampa tiket  che se discount50=true allora devo fare tiket-price/2  ma non so come tirare fuori sto **** di dato */
         discount50 = true;
         console.log(discount50);
+        //aggiungo la piuma marker-discount
+        discount50Marker.classList.toggle("d-none", false);
+
     } else {
         //altrimenti lo insulto
         alert("muggle, get out of here!");
-        
+
         discount50 = false;
         console.log(discount50);
+        //aggiungo la piuma marker-discount
+        discount50Marker.classList.toggle("d-none", true);
     }
-
-    /* DEVO FAR USCIRE IL VALORE DISCOUNT DALLA FUNZIONE (return?)PER APPLICARLO IN BTN GENERATE CLICK F ______________________________________________________________________________ */
-    return discount50//NON FUNZIONA
-    /* _____________________________________________________________________________________________ */
 });
 
 console.log(discount50);//controllo ma viene eseguito prima della funzione ovviamente, la sintassi va cambiata
@@ -384,25 +402,26 @@ btnTiketPrinter.addEventListener("click", function () {
     //console.log(tiketancientOffer_El)
     tiketAncientOffer_El.innerHTML = `ancient x ${ancientCounter}`
 
-
-    const userPrice = `${((adultPriceList + studentPriceList + ancientPriceList).toFixed(2))} Gold-Galleons`;
+    let userPrice = `${(adultPriceList + studentPriceList + ancientPriceList).toFixed(2)} Gold Galleons`;
     console.log(userPrice);//controllo somma
     //print on tiket
+    console.log(discount50Marker.classList);
+
+    /* SE IL MARKER NON HA LA CLASSE D-NONE (visibile) ALLORA APPLICA LO SCONTO 50%!*/
+    if (!discount50Marker.classList.contains("d-none")) {
+        console.log("DEVE APPLICARE LO SCONTO 50%!");
+
+      userPrice =`${((adultPriceList + studentPriceList + ancientPriceList)/2).toFixed(2)} Gold Galleons`;
+      console.log(userPrice);
+    };
+
+    /* stampo il prezzo */
     const tiketUserPrice_El = document.getElementById("tiket-user-price");
     tiketUserPrice_El.innerHTML = userPrice
 
-    /* tiket  offer= vi stampo(innerHTML) un valore differente in base alla fascia d'età dentro le if/else */
-
-
-    /* CAMBIO STRUTTURA */
-    /* const tiketUserOffer_El = document.getElementById("tiket-user-offer");
-    tiketUserOffer_El.innerHTML= `adult x ${adultCounter}
-    student x ${studentCounter}
-    ancient x ${ancientCounter}` */
-
     // tiket  carriage
     const tiketUserSpot_El = document.getElementById("tiket-user-spot");
-    tiketUserSpot_El.innerHTML = Math.floor(Math.random() * 11);//n intero max 10
+    tiketUserSpot_El.innerHTML = Math.floor(Math.random() * 61);//n intero max 60
 
     // tiket  CP code 
     const tiketUserCp_El = document.getElementById("tiket-user-CP");

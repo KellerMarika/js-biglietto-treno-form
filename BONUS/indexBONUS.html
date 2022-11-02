@@ -59,7 +59,7 @@
                                             <form action="get"  >
                                                 <fieldset> -->
                                             <!-- legenda -->
-                                            <legend class="fs-3 fw-bold">Book train Tiket</legend>
+                                            <legend class="fs-3 fw-bold pt-4 m-0">Book train Tiket</legend>
 
                                             <!-- id const userId -->
                                             <label class="d-block fs-5" for="user-id">wizard/witch Name:
@@ -76,8 +76,8 @@
 
 
                                             <!-- id const userBirthYear -->
-                                            <div id="My_select" class="pb-2 position-relative">
-                                                <div class="myy-select-label py-3 fs-5">Passengers:</div>
+                                            <div id="My_select" class="position-relative">
+                                                <div class="myy-select-label py-2 fs-5">Passengers:</div>
                                                 <div class="option-container select-option adult option_1">
                                                     <div class="d-flex ">
 
@@ -155,8 +155,8 @@
                                                 <!-- hide -->
                                                 <div class="text-center ">
                                                     <!-- add event listner click : qualdo  nel div dentro al bottone il valore è === other age groups" allora sostituiscilo con innerHTML icona + hide e togli d-none a : student e ancient-->
-                                                    <input class="my_btn bg-transparent border-0 p-2" type="button"
-                                                        value="other age groups" id="btn-age-dropdown"> <span
+                                                    <input class="my_btn bg-transparent border-0 p-1" type="button"
+                                                        value="More Ages" id="btn-age-dropdown"> <span
                                                         class=""><i
                                                             class=" dropdown-arrow fa-solid fa-chevron-down"></i></span>
                                                 </div>
@@ -182,9 +182,12 @@
                                                 <!-- codice sconto bunner -->
                                                 <!-- al clic si ape un prompt dove caricare il codice del bunner leviosa -->
 
-                                                <input type="button" id="btn-add-discount" class="small my_btn mt-3"
+                                                <div class="pt-2"> 
+                                                    <input type="button" id="btn-add-discount" class="small my_btn mt-2"
                                                     value=" aggiungi un codice sconto">
-
+                                                    <i id="discount-50-marker" class="fa-solid fa-feather fs-4 d-none"></i>
+                                                </div>
+                                            
 
 
 
@@ -205,7 +208,7 @@
                                         <!--    ************** JUMBOTRONE ************************* -->
                                         <div class="col-7">
                                             <div id="jumbotrone" class=" px-3">
-                                                <h1 class="title text-uppercase">HOGWARTS EXPRESS</h1>
+                                                <img id="logo" src="img/logo.png" alt="">
                                                 <h3 class="subtitle">
                                                     Platform 9 <sup>3/4</sup> directly to your home!</h3>
 
