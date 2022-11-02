@@ -415,6 +415,9 @@ btnTiketPrinter.addEventListener("click", function () {
       console.log(userPrice);
     };
 
+const tiketUserDiscount50_El =document.getElementById("leviosa-discount-50");
+tiketUserDiscount50_El.classList.toggle("d-none", false);
+
     /* stampo il prezzo */
     const tiketUserPrice_El = document.getElementById("tiket-user-price");
     tiketUserPrice_El.innerHTML = userPrice
